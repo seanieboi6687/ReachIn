@@ -12,12 +12,14 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  bio             :string
+#  gender          :string           not null
 #
 class User < ApplicationRecord
     validates :email, uniqueness: true, length: { in: 7..255 }, format: { with: URI::MailTo::EMAIL_REGEXP }
     validates :session_token, presence: true, uniqueness: true
     validates :first_name, :last_name, :password_digest, presence: true
     validates :password, length: { minimum: 6 }, allow_nil: true
+    validates :gender, inclusion: { in: ["Male", "Female", "She", "He", "They"], message: "Please select a gender" }
 
     has_secure_password
 
