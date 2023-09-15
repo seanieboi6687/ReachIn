@@ -26,9 +26,9 @@ function SignupFormPage() {
       dispatch(sessionActions.signup({ 
         email: email,
         password: password,
-        phone_number: phoneNumber,
-        first_name: firstName.charAt(0).toUpperCase() + firstName.slice(1).toLowerCase().trim(),
-        last_name: lastName.charAt(0).toUpperCase() + lastName.slice(1).toLowerCase().trim(),
+        phoneNumber: phoneNumber,
+        firstName: firstName.charAt(0).toUpperCase() + firstName.slice(1).toLowerCase().trim(),
+        lastName: lastName.charAt(0).toUpperCase() + lastName.slice(1).toLowerCase().trim(),
         gender: gender
       })).catch(async (res) => {
         let data;
