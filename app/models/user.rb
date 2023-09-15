@@ -19,7 +19,7 @@ class User < ApplicationRecord
     validates :session_token, presence: true, uniqueness: true
     validates :first_name, :last_name, :password_digest, presence: true
     validates :password, length: { minimum: 6 }, allow_nil: true
-    validates :gender, inclusion: { in: ["Male", "Female", "She", "He", "They"], message: "Please select a gender" }
+    validates :gender, inclusion: { in: ["Male", "Female", "Transgender", "Non-binary/non-conforming", "Prefer not to respond"], message: "Please select a gender" }
 
     has_secure_password
 
@@ -27,7 +27,11 @@ class User < ApplicationRecord
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
-        user&.authenticate(password) ? user : nil
+        if user&.authenticate(password) 
+            return user
+        else
+            nil 
+        end
     end
 
     def ensure_session_token
