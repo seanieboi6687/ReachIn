@@ -23,7 +23,8 @@ section, summary, time, mark, audio, video
 }
 
 #signin-form-container {
-    margin-left: 20vw;
+    margin-left: 24rem;
+    margin-top: 3rem;
 }
 
 #slogan1, #slogan2 {
@@ -133,3 +134,4 @@ section, summary, time, mark, audio, video
     text-decoration: none;
     color: inherit;
 }
+

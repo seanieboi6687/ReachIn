@@ -7,15 +7,15 @@ import LoginFormPage from "./components/LoginFormPage";
 function App() {
   return (
     <>
-      <Navigation />
-      
       <Switch>
 
         <Route path="/login" >
+          <Navigation />
           <LoginFormPage />
         </Route>
 
         <Route path="/signup">
+          <Navigation />
           <SignupFormPage />
         </Route>
 
