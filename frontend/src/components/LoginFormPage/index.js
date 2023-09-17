@@ -21,10 +21,9 @@ function LoginFormPage() {
       .catch(async (res) => {
         let data;
         try {
-          // .clone() essentially allows you to read the response body twice
           data = await res.clone().json();
         } catch {
-          data = await res.text(); // Will hit this case if, e.g., server is down
+          data = await res.text();
         }
         if (data?.errors) setErrors(data.errors);
         else if (data) setErrors([data]);
@@ -38,7 +37,9 @@ function LoginFormPage() {
       <h2 id="slogan2">community</h2>
       <form onSubmit={handleSubmit}>
         <ul>
-          {errors.map(error => <li key={error}>{error}</li>)}
+          {errors.map(error => 
+          <li key={error}>{error}</li>
+          )}
         </ul>
         <div id="email-input-container">
           <div id="email-label">
