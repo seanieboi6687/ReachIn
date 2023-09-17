@@ -33,41 +33,58 @@ function LoginFormPage() {
   };
 
   return (
-    <>
+    <div id="signin-form-container">
       <h1 id="slogan1">Find jobs through your</h1>
       <h2 id="slogan2">community</h2>
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map(error => <li key={error}>{error}</li>)}
         </ul>
-        <label>
-          Email
-          <div>
-            <input
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+        <div id="email-input-container">
+          <div id="email-label">
+            <label>Email</label>
           </div>
-        </label>
-        <label>
-          Password
-          <div>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+            <div>
+              <input 
+                id="email-input"
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+        </div>
+        <div id="password-input-container">
+          <div id="password-label">
+            <label>Password</label>
           </div>
-        </label>
-        <button type="submit">Log In</button>
-        <div>
-          <NavLink to="/signup">New to ReachOut? Join Now</NavLink>
+            <div>
+              <input
+                id="password-input"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+        </div>
+        <button type="submit" className="signin-button" >Sign in</button>
+        <div className="divider1">
+          <hr/>
+        </div>
+        <div className="or-text">
+          or
+        </div>
+        <div className="divider2">
+          <hr />
+        </div>
+        <div id="signup-link">
+          <button type="submit" className="join-now-button" >
+            <NavLink className="navlink"  to="/signup">New to ReachOut? Join now</NavLink>
+          </button>
         </div>
       </form>
-    </>
+    </div>
   );
 }
 

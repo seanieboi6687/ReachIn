@@ -1,0 +1,135 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table,
+caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details,
+embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video 
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
+            Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans',
+            Cantarell, 'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji',
+            'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Arial,
+            sans-serif;
+    vertical-align: baseline;
+}
+
+#signin-form-container {
+    margin-left: 20vw;
+}
+
+#slogan1, #slogan2 {
+    font-size: 56px;
+    font-weight: 200;
+    color: #8f5849;
+}
+
+#email-input-container {
+    padding-top: 2.4rem;
+}
+#password-input-container {
+    padding-top: 2.4rem;
+}
+
+#email-label {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+#password-label {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+#password-input,
+#email-input {
+    display: flex;
+    width: 24rem;
+    border-radius: 0.25rem;
+    border-width: 0.063rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+    font-size: 1rem;
+}
+
+.signin-button {
+    margin-top: 2.5rem;
+    width: 26rem;
+    padding: 1rem 2rem;
+    border-radius: 1.875rem;
+    border: none;
+    cursor: pointer;
+    background-color: #0a66c2;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.25;
+}
+
+.signin-button:hover{
+    background-color: #004182;
+}
+
+.join-now-button {
+    width: 26rem; 
+    padding: 1rem 2rem;
+    border-radius: 1.875rem;
+    border: none;
+    cursor: pointer;
+    background-color: #0a66c2;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.25;
+}
+
+.join-now-button {
+    margin-top: 1.5rem;
+    background-color: white;
+    color: rgba(0, 0, 0, 0.75);
+    border: 1px solid black;
+}
+
+.join-now-button:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.divider1 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 11.5rem;
+}
+
+.divider2 {
+    margin-top: -2rem;
+    width: 11.5rem;
+    margin-left: 14.5rem;
+}
+
+.or-text {
+    margin-left: 12.5rem;
+    margin-top: -2.7rem;
+    margin-bottom: 1.5rem;
+    font-size: 14px;
+}
+
+.navlink {
+    text-decoration: none;
+    color: inherit;
+}

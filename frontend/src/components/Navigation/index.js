@@ -15,22 +15,40 @@ function Navigation() {
     );
   } else {
     sessionLinks = (
-      <div>
-        <Route path="/login" >
-          <NavLink to="/signup">Join Now</NavLink>
-        </Route>
-        <Route path="/signup" >
-          <NavLink to="/login">Sign In</NavLink>
-        </Route>
-      </div>
+        <div className='signin-up-container'>
+          <Route path="/login">
+            <div id="signup-link" className="flex-container">
+              <button className="left-reached">
+                  <NavLink className="navlink" exact to="/login">Reached</NavLink>
+                <button className="left-in" >
+                  <NavLink className="navlink" exact to="/login">in</NavLink>
+                </button>
+              </button>
+              <div className="right-links">
+                <button className="joinnow-button1">
+                  <NavLink className="navlink" to="/signup">Join now</NavLink>
+                </button>
+              <button className="signin-button1">
+                <NavLink className="navlink" to="/login">Sign in</NavLink>
+              </button>
+              </div>
+            </div>
+          </Route>
+          <Route path="/signup" >
+            <div id='signin-link'>
+            <button>
+              <NavLink to="/login">Sign in</NavLink>
+            </button>
+            </div>
+          </Route>
+        </div>
     );
   }
 
   return (
-    <div>
-        <NavLink exact to="/login">ReacOut</NavLink>
+    <nav className='nav-container'>
         {sessionLinks}
-    </div>
+    </nav>
 
   );
 }
