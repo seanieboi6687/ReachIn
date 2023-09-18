@@ -20,6 +20,7 @@ section, summary, time, mark, audio, video
             'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Arial,
             sans-serif;
     vertical-align: baseline;
+    overflow-x: hidden;
 }
 
 #signin-form-container {
@@ -95,6 +96,25 @@ section, summary, time, mark, audio, video
     background-color: #004182;
 }
 
+.demosignin-button {
+    margin-top: 1rem;
+    width: 26rem;
+    padding: 1rem 2rem;
+    border-radius: 1.875rem;
+    border: none;
+    cursor: pointer;
+    background-color: #0a66c2;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.25;
+}
+
+.demosignin-button:hover {
+    background-color: #004182;
+}
+
 .join-now-button {
     width: 26rem; 
     padding: 1rem 2rem;
@@ -124,14 +144,14 @@ section, summary, time, mark, audio, video
 }
 
 .divider2 {
-    margin-top: -2rem;
+    margin-top: -2.5rem;
     width: 11.5rem;
     margin-left: 14.5rem;
 }
 
 .or-text {
     margin-left: 12.5rem;
-    margin-top: -2.7rem;
+    margin-top: -3.2rem;
     margin-bottom: 1.5rem;
     font-size: 14px;
 }
@@ -143,10 +163,10 @@ section, summary, time, mark, audio, video
 
 .loginpic {
     order: 1;
-    width: 40rem;
+    width: 50rem;
     height: auto;
     position: absolute;
     float: left;
     margin-left: 30rem;
-    margin-top: -25rem;
+    margin-top: -30rem;
 }

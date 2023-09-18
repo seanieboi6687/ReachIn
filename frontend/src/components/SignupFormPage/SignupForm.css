@@ -25,8 +25,8 @@ section, summary, time, mark, audio, video
     display: flex;
     justify-content: center;
     align-items: center;
-    width: fit-content;
-    margin-left: 40rem;
+    width: max-content;
+    margin-left: 45rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: rgb(241, 240, 238);

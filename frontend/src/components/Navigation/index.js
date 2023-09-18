@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import ProfileButton from './ProfileButton';
+import ProfileButton from '../Profilebutton/ProfileButton';
 import './Navigation.css';
 import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 
@@ -11,7 +11,15 @@ function Navigation() {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <>
+        <button className="left-reached">
+          <NavLink className="navlink" exact to="/login">Reach</NavLink>
+          <button className="left-in" >
+            <NavLink className="navlink" exact to="/login">in</NavLink>
+          </button>
+        </button>
+        <ProfileButton user={sessionUser} />
+      </>
     );
   } else {
     sessionLinks = (

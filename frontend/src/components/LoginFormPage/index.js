@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import * as sessionActions from "../../store/session"
 import { login } from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
@@ -12,35 +13,45 @@ function LoginFormPage() {
   const sessionUser = useSelector(state => state.session.user);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState([])
   const history = useHistory();
-  const [errors, setErrors] = useState([]);
 
   if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-        dispatch(login({
-                email: email, 
-                password: password
-            })).then((response) => {
-                if (response.ok) {
-                    setEmail("");
-                    setPassword("");
-                    history.push("/newsfeed");
-                }
-        })
-    };
+    setErrors([]);
+    return dispatch(sessionActions.login({ email, password }))
+      .catch(async (res) => {
+        let data;
+        try {
+          // .clone() essentially allows you to read the response body twice
+          data = await res.clone().json();
+        } catch {
+          data = await res.text(); // Will hit this case if, e.g., server is down
+        }
+        if (data?.errors) setErrors(data.errors);
+        else if (data) setErrors([data]);
+        else setErrors([res.statusText]);
+      });
+  };
+
+  const handleDemo = () => {
+    dispatch(login({
+      email: "Demouser@demomail.com",
+      password: "demodemo"
+    })).then((response) => {
+      if (response.ok) {
+        history.push("/newsfeed");
+      }
+    })
+  }
 
   return (
     <div id="signin-form-container">
       <h1 id="slogan1">Find opportunities</h1>
       <h2 id="slogan2">through your community</h2>
       <form onSubmit={handleSubmit}>
-        <ul>
-          {errors.map(error => 
-          <li key={error}>{error}</li>
-          )}
-        </ul>
         <div id="email-input-container">
           <div id="email-label">
             <label>Email</label>
@@ -69,7 +80,13 @@ function LoginFormPage() {
               />
             </div>
         </div>
-        <button type="submit" className="signin-button" >Sign in</button>
+        <ul>
+          {errors.map(error => <li key={error}>{error}</li>)}
+        </ul>
+        <div>
+          <button type="submit" className="signin-button" >Sign in</button>
+        </div>
+        <button type="submit" onClick={handleDemo} className="demosignin-button" >Demo</button>
         <div className="divider1">
           <hr/>
         </div>
@@ -82,7 +99,7 @@ function LoginFormPage() {
         <div id="signup-link">
           <button type="submit" className="join-now-button" >
             <img className="loginpic" src={loginpage}></img>
-            <NavLink className="navlink"  to="/signup">New to ReachOut? Join now</NavLink>
+            <NavLink className="navlink"  to="/signup">New to ReachIn? Join now</NavLink>
           </button>
         </div>
       </form>
