@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import LoginFormPage from "./components/LoginFormPage";
+import ProfileButton from "./components/Navigation/ProfileButton";
 
 function App() {
   return (
@@ -16,6 +17,10 @@ function App() {
 
         <Route path="/signup">
           <SignupFormPage />
+        </Route>
+
+        <Route path="/newsfeed">
+          <ProfileButton/>
         </Route>
 
       </Switch>

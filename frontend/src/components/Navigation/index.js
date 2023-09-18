@@ -20,7 +20,7 @@ function Navigation() {
             <Route path="/login">
               <div id="signup-link" className="flex-container">
                 <button className="left-reached">
-                    <NavLink className="navlink" exact to="/login">Reached</NavLink>
+                    <NavLink className="navlink" exact to="/login">Reach</NavLink>
                   <button className="left-in" >
                     <NavLink className="navlink" exact to="/login">in</NavLink>
                   </button>
@@ -38,7 +38,7 @@ function Navigation() {
             <Route path="/signup" >
               <div id="signup-link" className="flex-container">
                 <button className="left-reached">
-                  <NavLink className="navlink" exact to="/login">Reached</NavLink>
+                  <NavLink className="navlink" exact to="/login">Reach</NavLink>
                   <button className="left-in" >
                     <NavLink className="navlink" exact to="/login">in</NavLink>
                   </button>

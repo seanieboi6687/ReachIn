@@ -1,40 +1,40 @@
 import React, { useState } from "react";
-import * as sessionActions from "../../store/session";
+import { login } from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import './LoginForm.css';
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import loginpage from './loginpage.png'
 
 function LoginFormPage() {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
   const [errors, setErrors] = useState([]);
 
   if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setErrors([]);
-    return dispatch(sessionActions.login({ email, password }))
-      .catch(async (res) => {
-        let data;
-        try {
-          data = await res.clone().json();
-        } catch {
-          data = await res.text();
-        }
-        if (data?.errors) setErrors(data.errors);
-        else if (data) setErrors([data]);
-        else setErrors([res.statusText]);
-      });
-  };
+        dispatch(login({
+                email: email, 
+                password: password
+            })).then((response) => {
+                if (response.ok) {
+                    setEmail("");
+                    setPassword("");
+                    history.push("/newsfeed");
+                }
+        })
+    };
 
   return (
     <div id="signin-form-container">
-      <h1 id="slogan1">Find jobs through your</h1>
-      <h2 id="slogan2">community</h2>
+      <h1 id="slogan1">Find opportunities</h1>
+      <h2 id="slogan2">through your community</h2>
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map(error => 
@@ -81,6 +81,7 @@ function LoginFormPage() {
         </div>
         <div id="signup-link">
           <button type="submit" className="join-now-button" >
+            <img className="loginpic" src={loginpage}></img>
             <NavLink className="navlink"  to="/signup">New to ReachOut? Join now</NavLink>
           </button>
         </div>

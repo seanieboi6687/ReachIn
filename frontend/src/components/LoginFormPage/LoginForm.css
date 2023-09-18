@@ -141,3 +141,12 @@ section, summary, time, mark, audio, video
     color: inherit;
 }
 
+.loginpic {
+    order: 1;
+    width: 40rem;
+    height: auto;
+    position: absolute;
+    float: left;
+    margin-left: 30rem;
+    margin-top: -25rem;
+}
