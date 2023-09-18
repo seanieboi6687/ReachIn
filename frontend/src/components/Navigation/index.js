@@ -18,7 +18,6 @@ function Navigation() {
             <NavLink className="navlink" exact to="/login">in</NavLink>
           </button>
         </button>
-        <ProfileButton user={sessionUser} />
       </>
     );
   } else {
