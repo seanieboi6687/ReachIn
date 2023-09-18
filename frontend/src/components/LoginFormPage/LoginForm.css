@@ -59,12 +59,21 @@ section, summary, time, mark, audio, video
     display: flex;
     width: 24rem;
     border-radius: 0.25rem;
-    border-width: 0.063rem;
+    border-width: 1px;
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 0.875rem;
     padding-bottom: 0.875rem;
     font-size: 1rem;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+#password-input:hover,
+#email-input:hover {
+    border-width: 2px;
+    box-shadow: none;
+    background-color: rgb(241, 240, 238);
 }
 
 .signin-button {
@@ -98,9 +107,6 @@ section, summary, time, mark, audio, video
     font-weight: 600;
     text-align: center;
     line-height: 1.25;
-}
-
-.join-now-button {
     margin-top: 1.5rem;
     background-color: white;
     color: rgba(0, 0, 0, 0.75);

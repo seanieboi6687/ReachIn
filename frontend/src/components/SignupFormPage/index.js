@@ -128,10 +128,19 @@ function SignupFormPage() {
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
             />
-          <div> Already on ReachOut?
-            <NavLink to="/login">Sign In</NavLink>  
+          <button className="join-button" type="submit">Join</button>
+            <div className="divider3">
+              <hr />
+            </div>
+            <div className="or-text1">
+              or
+            </div>
+            <div className="divider4">
+              <hr />
+            </div>
+          <div className="signin"> Already on ReachedOut?
+            <NavLink className="signin-link" to="/login">Sign In</NavLink>  
           </div>
-          <button type="submit">Join</button>
         </form>
       </div>
     </div>
