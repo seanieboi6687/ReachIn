@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: ReachOut_production
-  username: ReachOut
-  password: <%= ENV["REACHOUT_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
