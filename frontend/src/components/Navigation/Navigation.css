@@ -3,7 +3,9 @@
 }
 
 .nav-container {
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding-left: 19.5vw;
   padding-top: 12px;
   padding-bottom: 16px;
   display: flex;
@@ -13,7 +15,6 @@
 .flex-container {
   display: flex;
   align-items: center;
-  margin-left: 23.5rem;
   justify-content: space-between;
 }
 
@@ -40,8 +41,8 @@
 
 .right-links {
   display: flex;
+  padding-right: 19.5vw;
   gap: 0.5rem;
-  margin-right: 20vw;
 }
 
 .signin-button1{

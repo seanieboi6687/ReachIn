@@ -19,13 +19,14 @@ function SignupFormPage() {
   const [errors, setErrors] = useState([]);
   const history = useHistory()
 
-  if (sessionUser) return <Redirect to="/newsfeed" />;
+  if (sessionUser) {
+    history.push('/newsfeed')
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
       setErrors([]);
-      history.push('/newsfeed')
       dispatch(sessionActions.signup({ 
         email: email,
         password: password,
@@ -50,6 +51,8 @@ function SignupFormPage() {
     }
   };
 
+  console.log(errors)
+
   return (
     <div className="background">
       <div className="signup-slogan">
@@ -58,9 +61,6 @@ function SignupFormPage() {
     <div className="sign-up-form-container">
       <div className="sign-up-form">
         <form onSubmit={handleSubmit}>
-          <ul>
-            {errors.map((error) => <li key={error}>{error}</li>)}
-          </ul>
           <div className="label">
             <label>First name</label>
           </div>
@@ -82,7 +82,7 @@ function SignupFormPage() {
               required
             />
           <div className="label">
-            <label>Gender</label>
+              <label>Gender</label>
           </div>
             <select value={gender} onChange={(e) => setGender(e.target.value)} id="menu">
               <option value=""></option>

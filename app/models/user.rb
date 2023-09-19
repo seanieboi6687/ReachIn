@@ -15,7 +15,7 @@
 #  gender          :string           not null
 #
 class User < ApplicationRecord
-    validates :email, uniqueness: true, length: { in: 7..255 }, format: { with: URI::MailTo::EMAIL_REGEXP }
+    validates :email, uniqueness: true, length: { in: 6..255 }, format: { with: URI::MailTo::EMAIL_REGEXP }
     validates :session_token, presence: true, uniqueness: true
     validates :first_name, :last_name, :password_digest, presence: true
     validates :password, length: { minimum: 6 }, allow_nil: true

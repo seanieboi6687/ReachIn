@@ -2,3 +2,7 @@
     width: 3rem;
     height: fit-content;
 }
+
+.profile-dropdown-container {
+    margin-top: -5rem;
+}
