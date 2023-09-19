@@ -98,9 +98,9 @@ function LoginFormPage() {
         </div>
         <div id="signup-link">
           <button type="submit" className="join-now-button" >
-            <img className="loginpic" src={loginpage}></img>
             <NavLink className="navlink"  to="/signup">New to ReachIn? Join now</NavLink>
           </button>
+          <img className="loginpic" src={loginpage}></img>
         </div>
       </form>
     </div>

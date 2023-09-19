@@ -167,6 +167,6 @@ section, summary, time, mark, audio, video
     height: auto;
     position: absolute;
     float: left;
-    margin-left: 30rem;
+    margin-left: 10rem;
     margin-top: -30rem;
 }
