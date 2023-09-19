@@ -80,13 +80,15 @@ function LoginFormPage() {
               />
             </div>
         </div>
-        <ul>
-          {errors.map(error => <li key={error}>{error}</li>)}
-        </ul>
+        <div className="error-message">
+          <ul>
+            {errors.map(error => <li key={error}>{error}</li>)}
+          </ul>
+        </div>
         <div>
           <button type="submit" className="signin-button" >Sign in</button>
         </div>
-        <button type="submit" onClick={handleDemo} className="demosignin-button" >Demo</button>
+        <button type="submit" onClick={handleDemo} className="demosignin-button" >Demo Sign in</button>
         <div className="divider1">
           <hr/>
         </div>

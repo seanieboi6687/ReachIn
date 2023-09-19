@@ -53,6 +53,7 @@ section, summary, time, mark, audio, video
     padding-right: 16px;
     padding-top: 24px;
     padding-bottom: 24px;
+    margin-bottom: 2rem;
 }
 
 #user-input {
@@ -142,4 +143,14 @@ section, summary, time, mark, audio, video
     margin-top: -3.3rem;
     margin-bottom: 1.5rem;
     font-size: 18px;
+}
+
+.password-error,
+.email-error,
+.phone-error,
+.gender-error,
+.confirm-error {
+    font-size: 12px;
+    color: red;
+    width: fit-content;
 }

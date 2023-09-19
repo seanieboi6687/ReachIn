@@ -19,7 +19,8 @@ class User < ApplicationRecord
     validates :session_token, presence: true, uniqueness: true
     validates :first_name, :last_name, :password_digest, presence: true
     validates :password, length: { minimum: 6 }, allow_nil: true
-    validates :gender, inclusion: { in: ["Male", "Female", "Transgender", "Non-binary/non-conforming", "Prefer not to respond"], message: "Please select a gender" }
+    validates :phone_number, length: { minimum: 10 }, presence: true
+    validates :gender, inclusion: { in: ["Male", "Female", "Transgender", "Non-binary/non-conforming", "Prefer not to respond"], message: "is required" }
 
     has_secure_password
 

@@ -8,6 +8,7 @@ import Newsfeed from './components/Newsfeed'
 import './components/Navigation/Navigation.css'
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import Footer from "./components/Footer"
 
 function App() {
   const sessionUser = useSelector(state => state.session.user);
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/login" >
           <Navigation />
           <LoginFormPage />
+          <Footer/>
         </Route>
 
         <Route exact path="/signup">

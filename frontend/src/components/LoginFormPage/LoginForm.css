@@ -24,7 +24,7 @@ section, summary, time, mark, audio, video
 }
 
 #signin-form-container {
-    margin-left: 24rem;
+    margin-left: 18.5rem;
     margin-top: 3rem;
 }
 
@@ -169,4 +169,9 @@ section, summary, time, mark, audio, video
     float: left;
     margin-left: 10rem;
     margin-top: -30rem;
+}
+
+.error-message {
+    color: red;
+    margin-top: 1rem;
 }

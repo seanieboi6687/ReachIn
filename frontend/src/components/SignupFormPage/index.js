@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
@@ -47,9 +46,32 @@ function SignupFormPage() {
         else setErrors([res.statusText]);
       });
     } else {
-      return setErrors(['Pleaes confirm your password.']);
+      return setErrors(['Please confirm your password.']);
     }
   };
+
+  let passwordError;
+  let emailError;
+  let genderError;
+  let phoneError;
+  let confirmError;
+  errors.forEach(error => {
+    if (error.includes('Password is too short (minimum is 6 characters)')) {
+      passwordError = 'Password is too short (minimum is 6 characters)'
+    } 
+    if(error.includes('Email is invalid')) {
+      emailError = 'Email is invalid'
+    }
+    if (error.includes('Phone number is too short (minimum is 10 characters)')) {
+      phoneError = 'Phone number is too short (minimum is 10 digits)'
+    }
+    if (error.includes('Gender is required')) {
+      genderError = 'Gender is required'
+    }
+    if (error.includes('Please confirm your password')) {
+      confirmError = 'Please confirm your password'
+    }
+  })
 
   return (
     <div className="background">
@@ -59,13 +81,6 @@ function SignupFormPage() {
     <div className="sign-up-form-container">
       <div className="sign-up-form">
         <form onSubmit={handleSubmit}>
-          <div className="errors">
-            <ul>
-              {errors.map(error => {
-                return <li>{error}</li>
-              })}
-            </ul>
-          </div>
           <div className="label">
             <label>First name</label>
           </div>
@@ -97,6 +112,7 @@ function SignupFormPage() {
               <option value="Non-binary/non-conforming">Non-binary/non-conforming</option>
               <option value="Prefer not to respond">Prefer not to respond</option>
             </select>
+            <div className="gender-error">{genderError}</div>
           <div className="label">
             <label>Email</label>
           </div>
@@ -107,6 +123,7 @@ function SignupFormPage() {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
+            <div className="email-error">{emailError}</div>
           <div className="label">
             <label>Phone number</label>
           </div>
@@ -117,6 +134,7 @@ function SignupFormPage() {
               onChange={(e) => setPhoneNumber(e.target.value)}
               required
             />
+            <div className="phone-error">{phoneError}</div>
           <div className="label">
             <label>Password</label>
           </div>
@@ -127,6 +145,7 @@ function SignupFormPage() {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
+            <div className="password-error">{passwordError}</div>
           <div className="label">
             <label>Confirm password</label>
           </div>
@@ -137,6 +156,7 @@ function SignupFormPage() {
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
             />
+            <div className="confirm-error">{confirmError}</div>
           <button className="join-button" type="submit">Join</button>
             <div className="divider3">
               <hr />
