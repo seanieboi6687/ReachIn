@@ -18,9 +18,16 @@
 !/tmp/pids/
 !/tmp/pids/.keep
 
-.byebug_history
-.DS_Store
-/public
+# Ignore uploaded files in development.
+/storage/*
+!/storage/.keep
+/tmp/storage/*
+!/tmp/storage/
+!/tmp/storage/.keep
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/frontend/.env.development.local
+
+/public

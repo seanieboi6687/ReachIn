@@ -47,11 +47,9 @@ function SignupFormPage() {
         else setErrors([res.statusText]);
       });
     } else {
-      return setErrors(['Confirm Password field must be the same as the Password field']);
+      return setErrors(['Pleaes confirm your password.']);
     }
   };
-
-  console.log(errors)
 
   return (
     <div className="background">
@@ -61,6 +59,13 @@ function SignupFormPage() {
     <div className="sign-up-form-container">
       <div className="sign-up-form">
         <form onSubmit={handleSubmit}>
+          <div className="errors">
+            <ul>
+              {errors.map(error => {
+                return <li>{error}</li>
+              })}
+            </ul>
+          </div>
           <div className="label">
             <label>First name</label>
           </div>
