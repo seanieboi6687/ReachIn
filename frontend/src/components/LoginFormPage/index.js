@@ -38,8 +38,8 @@ function LoginFormPage() {
 
   const handleDemo = () => {
     dispatch(login({
-      email: "Demouser@demomail.com",
-      password: "demodemo"
+      email: "demo@user.io",
+      password: "password"
     })).then((response) => {
       if (response.ok) {
         history.push("/newsfeed");
@@ -102,7 +102,7 @@ function LoginFormPage() {
           <button type="submit" className="join-now-button" >
             <NavLink className="navlink"  to="/signup">New to ReachIn? Join now</NavLink>
           </button>
-          <img className="loginpic" src={loginpage}></img>
+          <img className="loginpic" src={loginpage} alt=""></img>
         </div>
       </form>
     </div>

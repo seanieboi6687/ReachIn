@@ -18,10 +18,6 @@ section, summary, time, mark, audio, video
     vertical-align: baseline;
 }
 
-.profile-dropdown {
-  position: absolute;
-}
-
 .nav-container {
   display: flex;
   justify-content: center;
@@ -29,7 +25,6 @@ section, summary, time, mark, audio, video
   padding-right: 18rem;
   padding-top: 12px;
   padding-bottom: 16px;
-  display: flex;
   flex-direction: column;
 }
 
@@ -65,7 +60,7 @@ section, summary, time, mark, audio, video
   gap: 0.5rem;
 }
 
-.signin-button1{
+.signin-button1 {
   width: 6.5rem;
   height: auto;
   padding: 1rem 1rem;
@@ -77,6 +72,7 @@ section, summary, time, mark, audio, video
   border: 1px solid #0a66c2;
   text-align: center;
 }
+
 .signin-button1:hover {
   background-color: rgb(242, 247, 254);
 }

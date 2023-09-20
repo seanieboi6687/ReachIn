@@ -33,8 +33,8 @@ function App() {
         </Route>
 
         <Route exact path="/newsfeed">
-          <Navigation />
           <ProfileButton user={sessionUser} />
+          <Navigation />
           <Newsfeed/>
         </Route>
 

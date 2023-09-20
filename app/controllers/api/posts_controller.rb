@@ -12,12 +12,8 @@ def create
 end
 
 def index
-    page_number = params[:page].to_i || 1
-    per_page = 3
+    @posts = Post.all
 
-    @posts = Post.includes(:author, :likes, :comments).order(updated_at: :desc).paginate(page: page, per_page: per_page)
-    @has_more_posts = @posts.total_pages > page
-    
     render :index
 
 end

@@ -17,6 +17,14 @@ section, summary, time, mark, audio, video
             sans-serif;
     vertical-align: baseline;
 }
-.hello {
-    margin-top: 0rem;
+
+.post-index {
+    border: 1px solid red;
+}
+
+.post-container {
+    justify-content: center;
+    border: 1px solid blue;
+    width: fit-content;
+    height: 10rem;
 }
