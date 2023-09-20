@@ -29,6 +29,7 @@ function App() {
         <Route exact path="/signup">
           <Navigation />
           <SignupFormPage />
+          <Footer />
         </Route>
 
         <Route exact path="/newsfeed">
