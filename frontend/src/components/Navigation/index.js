@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from '../Profilebutton/ProfileButton';
 import './Navigation.css';
 import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
+import logo from '../../components/Navigation/logo.png'
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
@@ -11,14 +12,13 @@ function Navigation() {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <>
-        <button className="left-reached">
-          <NavLink className="navlink" exact to="/login">Reach</NavLink>
-          <button className="left-in" >
-            <NavLink className="navlink" exact to="/login">in</NavLink>
-          </button>
-        </button>
-      </>
+      <> 
+        <div>
+          <a href="https://github.com/seanieboi6687" target="_blank">
+            <img className="logo-png1" src={logo} alt='logo'></img>
+          </a>
+        </div>
+      </>  
     );
   } else {
     sessionLinks = (
@@ -57,12 +57,23 @@ function Navigation() {
     );
   }
 
-  return (
-    <nav className='nav-container'>
-        {sessionLinks}
-    </nav>
+  if (sessionUser){
+    return (
+      <>
+        <nav className='nav-container1'>
+            {sessionLinks}
+        </nav>
+        <ProfileButton user={sessionUser} />
+      </>
 
-  );
+    )}
+
+    return (
+      <nav className='nav-container2'>
+        {sessionLinks}
+      </nav>
+    )
+  
 }
 
 export default Navigation;

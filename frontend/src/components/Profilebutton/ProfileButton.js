@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import '../../components/Profilebutton/Profilebutton.css'
+import defaultProfile from '../../components/Profilebutton/profile-default.png'
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -32,21 +33,35 @@ function ProfileButton({ user }) {
     history.push("/login")
   };
 
-  return (
-    <div>
-      <button className="profilebutton" onClick={openMenu}>
-        Drop <i className="fa-solid fa-user-circle" />
-      </button>
+  let dropdown;
+  if (showMenu) {
+    dropdown = (
       <div className="profile-dropdown-container">
         {showMenu && (
           <ul className="profile-dropdown">
-            <li>Hello! {user.firstName}</li>
+            <img className="default-profile-drop" src={defaultProfile} alt="dfpf"></img>
+            <li className="user-name">{user.firstName} {user.lastName}</li>
             <li>
-              <button onClick={logout}>Log Out</button>
+              <div className="divider-drop1"/>
+              <button className="sign-out-button" onClick={logout}>Sign Out</button>
             </li>
           </ul>)}
-        </div>
-    </div>
+      </div>
+    );
+  } else {
+    <></>
+  }
+
+  return (
+    <>
+      <div className="profile-button-container">
+        <button className="profilebutton" onClick={openMenu}>
+          <img className="default-profile" src={defaultProfile} alt="dfpf"></img>
+          Me▼ <i className="fa-solid fa-user-circle" />
+        </button>
+      </div>
+      {dropdown}
+    </>
   );
 }
 

@@ -21,7 +21,6 @@ section, summary, time, mark, audio, video
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .sign-up-form-container {
@@ -33,7 +32,7 @@ section, summary, time, mark, audio, video
     height: fit-content;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    margin-top: 47rem;
+    margin-top: 45rem;
     background-color: rgb(241, 240, 238);
     border-radius: 0.5rem;
 }
@@ -45,9 +44,7 @@ section, summary, time, mark, audio, video
 }
 
 .signup-slogan {
-
-    font-weight: 200;
-    font-size: 32px;
+    font-size: 28px;
     text-align: center;
     padding-left: 16px;
     padding-right: 16px;

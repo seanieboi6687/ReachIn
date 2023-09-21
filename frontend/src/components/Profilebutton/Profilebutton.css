@@ -21,11 +21,67 @@ section, summary, time, mark, audio, video
     width: 3rem;
     height: fit-content;
     position: absolute;
-    order: -1;
+    background-color: transparent;
+    border: none;
+    color: rgb(145, 145, 145);
+    font-size: 0.8rem;
+    cursor: pointer;
 }
 
 .profile-dropdown-container {
-    margin-top: 1.5rem;
-    border: 1px solid blue;
-    width: fit-content;
+    order: 1;
+    margin-top: 4.5rem;
+    border: transparent;
+    border-radius: 0.5rem 0 0.5rem 0.5rem;
+    padding: 10px;
+    position: fixed;
+    margin-left: 56vw;
+    width: 15rem;
+    height: 20rem;
+    border: 1px solid rgb(232, 232, 232);
+    background-color: white;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.profile-button-container {
+    display: flex;
+    flex-direction: row;
+    height: 3.55rem;
+    margin-left: 65.2vw;
+    width: 3.55rem;
+    position: fixed;
+    justify-content: center;
+}
+
+.default-profile {
+    width: 2.3rem;
+}
+
+.default-profile-drop {
+    width: 4rem;
+}
+
+.user-name {
+    margin-left: 4rem;
+    margin-top: -3.5rem;
+    position: fixed;
+}
+
+.sign-out-button {
+    font-size: 1rem;
+    background-color: white;
+    border: none;
+    color: rgb(145, 145, 145);
+    margin-top: 14.5rem;
+    cursor: pointer;
+}
+
+.divider-drop1 {
+    width: 3rem;
+    margin-left: -0.6rem;
+    margin-top: 14rem;
+    position: fixed;
+    opacity: 0.6;
+    width: 16.1rem;
+    border: 1px solid rgb(145, 145, 145);;
 }

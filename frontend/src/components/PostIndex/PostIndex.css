@@ -25,6 +25,7 @@ section, summary, time, mark, audio, video
 .post-container {
     justify-content: center;
     border: 1px solid blue;
-    width: fit-content;
+    width: 580px;
     height: 10rem;
+    padding: 10px;
 }

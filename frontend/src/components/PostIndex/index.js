@@ -15,8 +15,15 @@ const PostIndex = () => {
             {posts.map(post => {
                 return (
                     <div className='post-container'>
-                        {post.body}
-                        {post.createdAt}
+                        <div>
+                            author_id: {post.authorId}
+                        </div>
+                        <div>
+                            Body: {post.body}
+                        </div>
+                        <div>
+                            Created At: {post.createdAt}    
+                        </div>
                     </div>
                 )
             })}
