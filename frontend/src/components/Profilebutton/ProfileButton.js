@@ -57,7 +57,7 @@ function ProfileButton({ user }) {
       <div className="profile-button-container">
         <button className="profilebutton" onClick={openMenu}>
           <img className="default-profile" src={defaultProfile} alt="dfpf"></img>
-          Me▼ <i className="fa-solid fa-user-circle" />
+          Me ▼ <i className="fa-solid fa-user-circle" />
         </button>
       </div>
       {dropdown}

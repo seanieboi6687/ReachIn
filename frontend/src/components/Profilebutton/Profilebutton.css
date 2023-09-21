@@ -29,7 +29,6 @@ section, summary, time, mark, audio, video
 }
 
 .profile-dropdown-container {
-    order: 1;
     margin-top: 4.5rem;
     border: transparent;
     border-radius: 0.5rem 0 0.5rem 0.5rem;
@@ -77,11 +76,10 @@ section, summary, time, mark, audio, video
 }
 
 .divider-drop1 {
-    width: 3rem;
-    margin-left: -0.6rem;
+    margin-left: -0.7rem;
     margin-top: 14rem;
     position: fixed;
     opacity: 0.6;
-    width: 16.1rem;
+    width: 16.3rem;
     border: 1px solid rgb(145, 145, 145);;
 }
