@@ -60,9 +60,9 @@ function Navigation() {
   if (sessionUser){
     return (
       <>
-        <nav className='nav-container1'>
+        <div className='nav-container1'>
             {sessionLinks}
-        </nav>
+        </div>
         <ProfileButton user={sessionUser} />
       </>
 

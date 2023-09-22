@@ -19,20 +19,23 @@ section, summary, time, mark, audio, video
 }
 
 .newsfeed {
+    position: static;
     background-color: rgb(241, 240, 238);
 }
 
 .post-index-container {
+    position: static;
     width: 620px;
     height: 100rem;
     margin-left: 31.5vw;
 }
 
 .create-post-container {
+    position: static;
     margin-left: 32vw;
     padding: 10px;
-    margin-top: 6rem;
-    margin-bottom: 2.5rem;
+    margin-top: -26.3rem;
+    margin-bottom: 1.5rem;
     border: 1px solid transparent;
     background-color: white;
     border-radius: 8px;
@@ -46,6 +49,7 @@ section, summary, time, mark, audio, video
 }
 
 .post-create-input-holder {
+    position: static;
     margin-left: 4rem;
     margin-top: -2.4rem;
     font-size: 16px;
@@ -54,9 +58,56 @@ section, summary, time, mark, audio, video
 }
 
 .divider5 {
-    width: 600px;
+    position: static;
+    width: 595px;
     opacity: 0.5;
-    margin-top: -1.2rem;
+    margin-top: 0rem;
     margin-bottom: 1.2rem;
-    margin-left: 32vw;
+    margin-left: 32.1vw;
+
+}
+
+.side-profile-container {
+    position: static;
+    border: 1px solid red;
+    padding: 10px;
+    width: 14rem;
+    height: 25rem;
+    margin-top: 5rem;
+    margin-left: 18.5vw;
+    border: 1px solid transparent;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.side-profile-post {
+    width: 6rem;
+    margin-left: 4rem;
+}
+
+.user-name-text {
+    margin-left: 4.4rem;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.dev-profile-container {
+    position: static;
+    border: 1px solid red;
+    width: 14rem;
+    height: 25rem;
+    margin-left: 77rem;
+    margin-top: -26.4rem;
+    border: 1px solid transparent;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.about {
+    margin-top: 1rem;
+    font-weight: 600;
+
 }

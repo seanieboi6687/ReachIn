@@ -1,7 +1,7 @@
 import '../../components/PostIndex/PostIndex.css'
 import { fetchAllPosts, getPosts } from '../../store/post'
 import { useSelector, useDispatch } from 'react-redux'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 
 const PostIndex = () => {
     const dispatch = useDispatch()
