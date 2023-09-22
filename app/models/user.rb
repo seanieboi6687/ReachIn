@@ -49,4 +49,9 @@ class User < ApplicationRecord
             return token unless User.exists?(session_token: token)
         end
     end
+
+    has_many :posts,
+    foreign_key: :author_id,
+    class_name: :Post,
+    dependent: :destroy
 end
