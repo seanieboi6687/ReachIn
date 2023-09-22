@@ -41,6 +41,13 @@ function ProfileButton({ user }) {
           <ul className="profile-dropdown">
             <img className="default-profile-drop" src={defaultProfile} alt="dfpf"></img>
             <li className="user-name">{user.firstName} {user.lastName}</li>
+            <p className="user-headline">
+              I am full-stack software engineer!
+              Javascript | React | Rails | Ruby | HTML | CSS | NodeJS | PostgreSQL.
+              </p>
+            <button className="view-profile-button">
+              View Profile
+            </button>
             <li>
               <div className="divider-drop1"/>
               <button className="sign-out-button" onClick={logout}>Sign Out</button>

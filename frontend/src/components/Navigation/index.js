@@ -5,18 +5,21 @@ import ProfileButton from '../Profilebutton/ProfileButton';
 import './Navigation.css';
 import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 import logo from '../../components/Navigation/logo.png'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
+  const history = useHistory()
+  function handleclick() {
+    history.push('/newsfeed')
+  }
 
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
       <> 
         <div>
-          <a href="https://github.com/seanieboi6687" target="_blank">
-            <img className="logo-png1" src={logo} alt='logo'></img>
-          </a>
+            <img onClick={handleclick} className="logo-png1" src={logo} alt='logo'></img>
         </div>
       </>  
     );

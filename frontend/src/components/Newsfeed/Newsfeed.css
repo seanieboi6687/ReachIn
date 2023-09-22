@@ -17,29 +17,57 @@ section, summary, time, mark, audio, video
             sans-serif;
     vertical-align: baseline;
 }
-
-.newsfeed {
-    position: static;
+.newsfeed-container {
+    margin-top: 3.5rem;
     background-color: rgb(241, 240, 238);
+}
+
+.newsfeed-grid {
+    display: grid;
+    grid-template-columns: 30% 32.77% 30%;
+    grid-gap: 2.3rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2.3rem;
+    border: 1px solid red
+}
+
+.left-container {
+    grid-area: 1/1/1/1;
+    border: 1px solid blue;
+    justify-self: end;
+}
+
+.center-container {
+    grid-area: 1/2/1/2;
+}
+
+.right-container {
+    grid-area: 1/3/1/3;
+    border: 1px solid blue;
+    justify-self: start;
 }
 
 .post-index-container {
     position: static;
-    width: 620px;
+    width: fit-content;
     height: 100rem;
-    margin-left: 31.5vw;
+    border: 1px solid blue;
+    margin-top: 2.3rem;
 }
 
 .create-post-container {
+    border: 1px solid blue;
+    width: fit-content;
+}
+
+.create-post {
     position: static;
-    margin-left: 32vw;
     padding: 10px;
-    margin-top: -26.3rem;
-    margin-bottom: 1.5rem;
     border: 1px solid transparent;
     background-color: white;
     border-radius: 8px;
-    width: 580px;
+    width: 535px;
     height: 5rem;
     box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
 }
@@ -57,37 +85,24 @@ section, summary, time, mark, audio, video
     font-weight: 500;
 }
 
-.divider5 {
-    position: static;
-    width: 595px;
-    opacity: 0.5;
-    margin-top: 0rem;
-    margin-bottom: 1.2rem;
-    margin-left: 32.1vw;
-
-}
-
 .side-profile-container {
     position: static;
-    border: 1px solid red;
     padding: 10px;
-    width: 14rem;
+    width: 12.4rem;
     height: 25rem;
-    margin-top: 5rem;
-    margin-left: 18.5vw;
-    border: 1px solid transparent;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+    border: 1px solid red;
 }
 
 .side-profile-post {
     width: 6rem;
-    margin-left: 4rem;
+    margin-left: 3.3rem;
 }
 
 .user-name-text {
-    margin-left: 4.4rem;
+    margin-left: 3.3rem;
     margin-top: 1rem;
     font-weight: 600;
 }
@@ -95,10 +110,8 @@ section, summary, time, mark, audio, video
 .dev-profile-container {
     position: static;
     border: 1px solid red;
-    width: 14rem;
+    width: 17rem;
     height: 25rem;
-    margin-left: 77rem;
-    margin-top: -26.4rem;
     border: 1px solid transparent;
     background-color: white;
     border-radius: 8px;
