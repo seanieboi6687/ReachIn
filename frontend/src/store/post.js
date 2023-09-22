@@ -1,6 +1,7 @@
 import csrfFetch from "./csrf";
 
 export const RECEIVE_POSTS = 'posts/RECEIVE_POSTS'
+export const RECEIVE_POST = 'posts/RECEIVE_POST'
 
 export const receivePosts = posts => {
     return {
@@ -9,11 +10,31 @@ export const receivePosts = posts => {
     }
 }
 
+export const receivePost = post => {
+    return {
+        type: RECEIVE_POST,
+        post
+    }
+}
+
 export const getPosts = state => {
     if  (state.posts) {
         return Object.values(state.posts)
     } else {
         return []
+    }
+}
+
+export const createPost = post => async dispatch => {
+    const response = await csrfFetch('/api/posts', {
+        method: 'POST',
+        body: post
+    })
+
+    if (response.ok) {
+        const data = await response.json()
+        dispatch(receivePost(data.post))
+        return response
     }
 }
 
@@ -34,6 +55,8 @@ const postsReducer = (state = {}, action) => {
     switch(action.type){
         case RECEIVE_POSTS:
             return {...nextState, ...action.posts}
+        case RECEIVE_POST:
+            return {...nextState, [action.post.id]: action.post}
         default:
             return state
     }
