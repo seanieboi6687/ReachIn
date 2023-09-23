@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import './Modal.css'
 
 export default function Modal ({open, children, onClose}) {
     const MODAL_STYLES = {
@@ -21,14 +22,15 @@ export default function Modal ({open, children, onClose}) {
         left: 0,
         right: 0,
         bottom: 0,
+        backgroundColor: "rgba(0, 0, 0, 0.7)",
         zIndex: 10000
     }
     if (!open) return null
 
     return ReactDOM.createPortal(
-        <div id="modal-background">
+        <div style={OVERLAY_STYLES}>
             <div style={MODAL_STYLES}>
-                <button onClick={onClose}>Close Modal</button>
+                <button className="modal-close-button" onClick={onClose}>X</button>
                 {children}
             </div>
         </div>,

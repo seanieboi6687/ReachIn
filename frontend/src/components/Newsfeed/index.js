@@ -6,6 +6,7 @@ import defaultProfile from '../../components/Profilebutton/profile-default.png'
 import { createPost } from "../../store/post";
 import Modal from "../CreatePost/Modal";
 import { useState } from "react";
+import CreatePostForm from "../CreatePost/CreatePostForm";
 
 
 function Newsfeed() {
@@ -29,9 +30,11 @@ function Newsfeed() {
                             <img className="default-profile-pic" src={defaultProfile}></img>
                             <div className="post-create-input-container">
                                 <button onClick={() => setIsOpen(true)} className="start-post-create-button">Start a post</button>
-                                <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-                                    Hi from Modal
-                                </Modal>
+                                <div className="modal-container">
+                                    <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+                                        <CreatePostForm/>
+                                    </Modal>
+                                </div>
                             </div>
                         </div>
                     </div>
