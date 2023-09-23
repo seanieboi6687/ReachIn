@@ -1,10 +1,15 @@
 import React from "react";
 import '../../components/Newsfeed/Newsfeed.css'
 import PostIndex from "../PostIndex";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import defaultProfile from '../../components/Profilebutton/profile-default.png'
+import { createPost } from "../../store/post";
+import Modal from "../CreatePost/Modal";
+import { useState } from "react";
+
 
 function Newsfeed() {
+    const [isOpen, setIsOpen] = useState(false)
     const sessionUser = useSelector(state => state.session.user);
     return (
         <div className="newsfeed-container">
@@ -21,9 +26,12 @@ function Newsfeed() {
                 <div className="center-container">
                     <div className="create-post-container">
                         <div className="create-post">
-                            <img className="default-profile-post" src={defaultProfile}></img>
-                            <div className="post-create-input-holder">
-                                *Create-Post-Input-Placeholder*
+                            <img className="default-profile-pic" src={defaultProfile}></img>
+                            <div className="post-create-input-container">
+                                <button onClick={() => setIsOpen(true)} className="start-post-create-button">Start a post</button>
+                                <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+                                    Hi from Modal
+                                </Modal>
                             </div>
                         </div>
                     </div>
