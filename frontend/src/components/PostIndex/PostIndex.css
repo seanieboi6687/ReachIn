@@ -18,12 +18,17 @@ section, summary, time, mark, audio, video
     vertical-align: baseline;
 }
 
+.post-index {
+    padding: 1px;
+    margin-left: -.1rem;
+}
+
 .post-container {
     position: static;
     justify-content: center;
     border: 1px solid transparent;
     border-radius: 8px;
-    width: 535px;
+    width: 538px;
     height: 10rem;
     padding: 10px;
     margin-bottom: 10px;

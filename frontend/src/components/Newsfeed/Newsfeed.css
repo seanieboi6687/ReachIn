@@ -29,13 +29,12 @@ section, summary, time, mark, audio, video
     margin-left: auto;
     margin-right: auto;
     margin-top: 2.3rem;
-    border: 1px solid red
 }
 
 .left-container {
     grid-area: 1/1/1/1;
-    border: 1px solid blue;
     justify-self: end;
+    padding: 1px;
 }
 
 .center-container {
@@ -44,30 +43,28 @@ section, summary, time, mark, audio, video
 
 .right-container {
     grid-area: 1/3/1/3;
-    border: 1px solid blue;
     justify-self: start;
+    padding: 1px;
 }
 
 .post-index-container {
     position: static;
     width: fit-content;
     height: 100rem;
-    border: 1px solid blue;
     margin-top: 2.3rem;
+    padding: 1px;
 }
 
 .create-post-container {
-    border: 1px solid blue;
-    width: fit-content;
+    padding: 1px;
 }
 
 .create-post {
     position: static;
-    padding: 5px;
+    padding: 10px;
     border: 1px solid transparent;
     background-color: white;
     border-radius: 8px;
-    width: 535px;
     height: 7.5rem;
     box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
 }
@@ -113,7 +110,6 @@ section, summary, time, mark, audio, video
     background-color: white;
     border-radius: 8px;
     box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
-    border: 1px solid red;
 }
 
 .side-profile-post {
@@ -129,7 +125,6 @@ section, summary, time, mark, audio, video
 
 .dev-profile-container {
     position: static;
-    border: 1px solid red;
     width: 17rem;
     height: 25rem;
     border: 1px solid transparent;

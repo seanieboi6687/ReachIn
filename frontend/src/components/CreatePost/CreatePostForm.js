@@ -3,9 +3,9 @@ import React from "react";
 const CreatePostForm = () => {
 
     return (
-        <>
-            Hi from Modal Create Post Form
-        </>
+        <form>
+            <input className="post-body-input" type="text" placeholder="What do you want to talk about?"/>
+        </form>
     )
 }
 

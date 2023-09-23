@@ -1,19 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import './Modal.css'
+import modaldefaultProfile from '../../components/Profilebutton/profile-default.png'
+import { useSelector } from "react-redux";
 
 export default function Modal ({open, children, onClose}) {
+    const sessionUser = useSelector(state => state.session.user);
+
     const MODAL_STYLES = {
         position: 'fixed',
-        top: '3.7%',
-        left: '31%',
+        top: '2.2rem',
+        left: '28.7%',
         transfor: 'translate(-50%, -50%)',
         backgroundColor: '#FFF',
-        padding: '50px',
+        padding: '40px',
         zIndex: 1000,
         borderRadius: '10px',
-        width: '40rem',
-        height: '30rem'
+        width: '41.4rem',
+        height: '31.5rem'
     }
 
     const OVERLAY_STYLES = {
@@ -30,6 +34,7 @@ export default function Modal ({open, children, onClose}) {
     return ReactDOM.createPortal(
         <div style={OVERLAY_STYLES}>
             <div style={MODAL_STYLES}>
+                <img className="modal-profile-pic" src={modaldefaultProfile}></img>
                 <button className="modal-close-button" onClick={onClose}>X</button>
                 {children}
             </div>
