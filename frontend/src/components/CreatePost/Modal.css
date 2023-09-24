@@ -21,11 +21,17 @@ section, summary, time, mark, audio, video
 .modal-close-button {
     position: fixed;
     background-color: transparent;
-    border: none;
-    margin-left: 41rem;
-    margin-top: -1.1rem;
+    border-radius: 30px;
+    margin-left: 40.5rem;
+    margin-top: -1.9rem;
     font-size: 24px;
     cursor: pointer;
+    width: 2.5rem;
+    transition: 0.2s ease-in-out;
+}
+
+.modal-close-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .post-body-input {
@@ -73,6 +79,7 @@ section, summary, time, mark, audio, video
     font-weight: 600;
     text-align: center;
     line-height: 1.25;
+    transition: 0.2s ease-in-out;
 }
 
 .submit-create-post-button:hover {

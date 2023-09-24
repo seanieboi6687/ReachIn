@@ -6,13 +6,14 @@ import { useEffect } from 'react'
 const PostIndex = () => {
     const dispatch = useDispatch()
     const posts = useSelector(getPosts)
+    const postsReverse = [...posts].reverse()
     useEffect(() => {
         dispatch(fetchAllPosts())
     },[])
     console.log(posts)
     return (
         <div className='post-index'>
-            {posts.map(post => {
+            {postsReverse.map(post => {
                 return (
                     <div className='post-container'>
                         <div>

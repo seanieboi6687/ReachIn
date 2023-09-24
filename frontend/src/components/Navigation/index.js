@@ -6,6 +6,7 @@ import './Navigation.css';
 import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 import logo from '../../components/Navigation/logo.png'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import home from '../../components/Navigation/homeicon.png'
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
@@ -65,6 +66,12 @@ function Navigation() {
       <>
         <div className='nav-container1'>
             {sessionLinks}
+          <div className='nav-menu'>
+            <div className='home-container'>
+              <img onClick={handleclick} className="home-png" src={home} alt='home'></img>
+              <p className='home-label'>Home</p>
+            </div>
+          </div>
         </div>
         <ProfileButton user={sessionUser} />
       </>

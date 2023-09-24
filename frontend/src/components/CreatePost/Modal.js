@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import './Modal.css'
 import modaldefaultProfile from '../../components/Profilebutton/profile-default.png'
 import { useSelector } from "react-redux";
+import close from '../../components/CreatePost/close.png'
 
 export default function Modal ({open, children, onClose}) {
     const sessionUser = useSelector(state => state.session.user);
@@ -36,7 +37,7 @@ export default function Modal ({open, children, onClose}) {
             <div style={MODAL_STYLES}>
                 <img className="modal-profile-pic" src={modaldefaultProfile}/>
                 <p className="modal-user-name">{sessionUser.firstName} {sessionUser.lastName}</p>
-                <button className="modal-close-button" onClick={onClose}>X</button>
+                <img className="modal-close-button" onClick={onClose} src={close}></img>
                 {children}
             </div>
         </div>,

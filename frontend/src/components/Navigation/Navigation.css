@@ -123,3 +123,35 @@ section, summary, time, mark, audio, video
   top: 0.6rem;
   cursor: pointer;
 }
+
+.home-button {
+  position: relative;
+  width: 5rem;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-gap: 2rem;
+  position: fixed;
+  width: 20rem;
+  height: 3.6rem;
+  margin-left: 34rem;
+  margin-top: 0.3rem;
+}
+
+.home-png {
+  width: 1.8rem;
+  cursor: pointer;
+  margin-left: 0.15rem;
+  margin-top: 0.4rem;
+}
+
+.home-container {
+  width: fit-content;
+  overflow: hidden;
+}
+
+.home-label {
+  font-size: 12px;
+}
