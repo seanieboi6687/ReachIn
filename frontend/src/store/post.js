@@ -28,7 +28,10 @@ export const getPosts = state => {
 export const createPost = post => async dispatch => {
     const response = await csrfFetch('/api/posts', {
         method: 'POST',
-        body: post
+        body: JSON.stringify(post),
+        headers: {
+            'Content-Type': 'application/json'
+        }
     })
 
     if (response.ok) {

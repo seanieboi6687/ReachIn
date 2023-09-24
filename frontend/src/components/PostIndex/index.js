@@ -9,7 +9,7 @@ const PostIndex = () => {
     useEffect(() => {
         dispatch(fetchAllPosts())
     },[])
-
+    console.log(posts)
     return (
         <div className='post-index'>
             {posts.map(post => {

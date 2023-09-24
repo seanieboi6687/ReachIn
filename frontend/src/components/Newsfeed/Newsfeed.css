@@ -26,7 +26,7 @@ section, summary, time, mark, audio, video
 .newsfeed-grid {
     display: grid;
     grid-template-columns: 30% 32.77% 30%;
-    grid-gap: 2.3rem;
+    grid-gap: 1.5rem;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2.3rem;

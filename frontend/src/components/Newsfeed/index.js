@@ -12,6 +12,7 @@ import CreatePostForm from "../CreatePost/CreatePostForm";
 function Newsfeed() {
     const [isOpen, setIsOpen] = useState(false)
     const sessionUser = useSelector(state => state.session.user);
+
     return (
         <div className="newsfeed-container">
 
