@@ -18,27 +18,11 @@ section, summary, time, mark, audio, video
     vertical-align: baseline;
 }
 
-.modal-close-button {
-    position: fixed;
-    background-color: transparent;
-    border-radius: 30px;
-    margin-left: 40.5rem;
-    margin-top: -1.9rem;
-    font-size: 24px;
-    cursor: pointer;
-    width: 2.5rem;
-    transition: 0.2s ease-in-out;
-}
-
-.modal-close-button:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-.post-body-input {
-    position: fixed;
-    width: 42.5rem;
-    margin-left: -0.75rem;
-    margin-top: 4rem;
+.edit-post-input {
+    position: absolute;
+    width: 41rem;
+    margin-top: 4.5rem;
+    margin-left: -1rem;
     vertical-align: top;
     border: none;
     outline: none;
@@ -47,29 +31,13 @@ section, summary, time, mark, audio, video
     font-size: 18px;
     font-family: inherit;
     resize: none;
-    cursor: default;
 }
 
-.modal-profile-pic {
+.edit-save-button {
     position: fixed;
-    width: 5rem;
-    margin-top: -2rem;
-    margin-left: -0.75vw;
-}
-
-.modal-user-name {
-    position: fixed;
-    margin-left: 4.5rem;
-    font-weight: 600;
-    font-size: 1.5rem;
-    margin-top: -0.5rem;
-}
-
-.submit-create-post-button {
-    position: fixed;
-    width: 4.5rem;
-    margin-left: 37.5rem;
-    margin-top: 30.5rem;
+    width: 6rem;
+    margin-left: 36rem;
+    margin-top: 32.5rem;
     border-radius: 1.875rem;
     padding: 0.4rem;
     border: none;
@@ -83,6 +51,6 @@ section, summary, time, mark, audio, video
     transition: 0.2s ease-in-out;
 }
 
-.submit-create-post-button:hover {
+.edit-save-button:hover {
     background-color: #004182;
 }

@@ -36,7 +36,7 @@ function Newsfeed() {
                                 <button onClick={() => setIsOpen(true)} className="start-post-create-button">Start a post</button>
                                 <div className="modal-container">
                                     <CreatePostModal open={isOpen} onClose={() => setIsOpen(false)}>
-                                        <CreatePostForm/>
+                                        <CreatePostForm onClose={() => setIsOpen(false)} />
                                     </CreatePostModal>
                                 </div>
                             </div>

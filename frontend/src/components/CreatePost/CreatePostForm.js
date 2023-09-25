@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createPost } from "../../store/post";
 import { useDispatch } from "react-redux";
 
-const CreatePostForm = () => {
+const CreatePostForm = ({onClose}) => {
     const [body, setBody] = useState('')
     const dispatch = useDispatch();
 
@@ -25,6 +25,7 @@ const CreatePostForm = () => {
         dispatch(createPost({
             body: body
         }))
+        onClose()
     };
 
     return (

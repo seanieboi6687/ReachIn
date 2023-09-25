@@ -1,30 +1,30 @@
 import React from "react";
-import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getOnePost, fetchOnePost, updatePost } from "../../store/post";
 import { useEffect, useState } from "react";
+import './UpdateForm.css'
 
-const UpdateForm = () => {
-    debugger
+const UpdateForm = ({postId, onClose}) => {
     const dispatch = useDispatch()
-    const { postId } = useParams()
     const post = useSelector(getOnePost(postId))
     const [body, setBody] = useState(post.body)
 
     useEffect(() => {
-        if (postId) {
+        if (postId){
             dispatch(fetchOnePost(postId))
         }
-    },[postId])
+    }, [postId])
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleUpdate = (e) => {
+        e.preventDefault()
         dispatch(updatePost({...post, id: postId, body}))
-    } 
+        onClose()
+    }
+
     return (
-        <form onSubmit={handleSubmit}>
-            <textarea className="edit-post-input" onChange={e => setBody(e.target.value)} value={body}/>
-            <button className="save-button">Save</button>
+        <form onSubmit={handleUpdate}>
+            <textarea className="edit-post-input" onChange={(e) => setBody(e.target.value)} value={body}/>
+            <button type="submit" className="edit-save-button">Save</button>
         </form>
     )
 }

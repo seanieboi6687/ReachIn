@@ -5,7 +5,9 @@ import { useEffect } from 'react'
 import pencil from '../../components/PostIndex/editpencil.png'
 import trash from '../../components/PostIndex/posttrash.png'
 import PostDeleteModal from './PostDeleteModal'
+import EditPostModal from './PostEditModal'
 import { useState } from 'react'
+import UpdateForm from '../UpdatePost/UpdateForm'
 
 const PostIndex = () => {
     const dispatch = useDispatch()
@@ -13,6 +15,7 @@ const PostIndex = () => {
     const posts = useSelector(getPosts)
     const postsReverse = [...posts].reverse()
     const [openPostId, setOpenPostId] = useState(null);
+    const [openEditPostId, setOpenEditPostId] = useState(null)
 
     useEffect(() => {
         dispatch(fetchAllPosts())
@@ -26,11 +29,13 @@ const PostIndex = () => {
                     return (
                         <div className='post-container'>
                             <div className="edit-pencil-container">
-                                <img className="edit-pencil" src={pencil} />
-                                
+                                <img onClick={() => setOpenEditPostId(post.id)} className="edit-pencil" src={pencil} />
+                                <EditPostModal postId={post.id} open={openEditPostId === post.id} onClose={() => setOpenEditPostId(null)}>
+                                    <UpdateForm postId={openEditPostId} onClose={() => setOpenEditPostId(null)} />
+                                </EditPostModal>
                             </div>
                             <div className="trash-container">
-                                <img onClick={() => setOpenPostId(post.id)}className="trash" src={trash} />
+                                <img onClick={() => setOpenPostId(post.id)} className="trash" src={trash} />
                                     <PostDeleteModal postId={post.id} open={openPostId === post.id} onClose={() => setOpenPostId(null)}>
                                         <h1 className='delete-post-heading'>Delete post?</h1>
                                         <p className='delete-post-question'>Are you sure you want to permanently remove this post from ReachIn?</p>
