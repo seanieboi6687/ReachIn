@@ -97,6 +97,7 @@ section, summary, time, mark, audio, video
     border-width: 0.05rem;
     text-align: left;
     opacity: 0.7;
+    transition: 0.2s ease-in-out;
 }
 
 .start-post-create-button:hover {
@@ -163,6 +164,15 @@ section, summary, time, mark, audio, video
     font-weight: 300;
 }
 
+.git1{
+    padding-left: 5px;
+    transition: 0.2s ease-in-out;
+}
+
+.git1:hover{
+    transform: scale(1.1);
+}
+
 .git-png1{
     width: 2rem;
     padding-left: 0.4rem;
@@ -174,6 +184,15 @@ section, summary, time, mark, audio, video
     font-size: 0.9rem;
     padding-top: 0.1rem;
     font-weight: 400;
+}
+
+.linked1{
+    padding-left: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+.linked1:hover{
+    transform: scale(1.1);
 }
 
 .link-png1{
@@ -195,6 +214,7 @@ section, summary, time, mark, audio, video
     grid-gap: 1rem;
     height: 3.5rem;
     margin-top: 3.5rem;
+    overflow: hidden;
 }
 
 @keyframes pulse {

@@ -35,9 +35,9 @@ export default function Modal ({open, children, onClose}) {
     return ReactDOM.createPortal(
         <div style={OVERLAY_STYLES}>
             <div style={MODAL_STYLES}>
-                <img className="modal-profile-pic" src={modaldefaultProfile}/>
+                <img className="modal-profile-pic" src={modaldefaultProfile} alt="modal-profile"/>
                 <p className="modal-user-name">{sessionUser.firstName} {sessionUser.lastName}</p>
-                <img className="modal-close-button" onClick={onClose} src={close}></img>
+                <img className="modal-close-button" onClick={onClose} src={close} alt="modal-close"></img>
                 {children}
             </div>
         </div>,

@@ -9,7 +9,7 @@ const PostIndex = () => {
     const postsReverse = [...posts].reverse()
     useEffect(() => {
         dispatch(fetchAllPosts())
-    },[])
+    },[dispatch])
     console.log(posts)
     return (
         <div className='post-index'>
