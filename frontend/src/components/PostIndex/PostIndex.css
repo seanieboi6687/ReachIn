@@ -30,8 +30,9 @@ section, summary, time, mark, audio, video
     justify-content: center;
     border: 1px solid transparent;
     border-radius: 8px;
-    height: 10rem;
-    padding: 10px;
+    height: fit-content;
+    padding-left: 15px;
+    padding-right: 15px;
     margin-bottom: 10px;
     background-color: white;
     box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
@@ -100,4 +101,77 @@ section, summary, time, mark, audio, video
     margin-top: 0.5rem;
     margin-left: -2.5rem;
     color: rgba(0, 0, 0, 0.6);
+}
+
+.post-contents{
+    margin-bottom: 0.5rem;
+}
+
+.post-body-container {
+    border: 1px solid red;
+    height: fit-content;
+}
+
+.post-index-divider {
+    margin-top: 3rem;
+    height: 1px;
+    opacity: 0.5;
+}
+
+.post-interaction-container {
+    display: grid;
+    grid-template-columns: 48.25% 48.25% 3.5%;
+    border: 1px solid red;
+    height: 2.5rem;
+    width: 31.9rem;
+    padding: 5px;
+    grid-gap: 1rem;
+}
+
+.like-button-container {
+    border: 1px solid blue;
+    grid-area: 1/1/1/2;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.comment-button-container {
+    border: 1px solid black;
+    grid-area: 1/2/1/3;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.like-button-container:hover, 
+.comment-button-container:hover{
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.like-png {
+    width: 2.5rem;
+    margin-left: -2rem;
+}
+
+.like-label {
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.comment-png {
+    width: 2.5rem;
+    margin-left: -3.5rem;
+}
+
+.comment-label{
+    margin-top: 0.6rem;
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 16px;
+    font-weight: 500;   
 }

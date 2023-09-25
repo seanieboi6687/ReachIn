@@ -8,6 +8,8 @@ import PostDeleteModal from './PostDeleteModal'
 import EditPostModal from './PostEditModal'
 import { useState } from 'react'
 import UpdateForm from '../UpdatePost/UpdateForm'
+import likepng from './likepng.png'
+import commentpng from './commentpng.png'
 
 const PostIndex = () => {
     const dispatch = useDispatch()
@@ -43,16 +45,26 @@ const PostIndex = () => {
                             </div>
                             <div className='post-contents'>
                                 <div>
-                                    author_id: {post?.authorId}
+                                    {sessionUser.firstName} {sessionUser.lastName}
                                 </div>
                                 <div>
-                                    postId: {post?.id}
+                                    Created At: {post.createdAt}
+                                </div>
+                                <div className='post-body-container'>
+                                    {post.body}
                                 </div>
                                 <div>
-                                    Body: {post?.body}
+                                    <hr className='post-index-divider'/>
                                 </div>
-                                <div>
-                                    Created At: {post?.createdAt}
+                                <div className='post-interaction-container'>
+                                    <div className='like-button-container'>
+                                        <img className='like-png' src={likepng}/>
+                                        <label className='like-label'>Like</label>
+                                    </div>
+                                    <div className='comment-button-container'>
+                                        <img className='comment-png' src={commentpng}/>
+                                        <label className='comment-label'>Comment</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -61,16 +73,16 @@ const PostIndex = () => {
                 return (
                     <div className='post-container'>
                         <div>
-                            author_id: {post?.authorId}
+                            author_id: {post.authorId}
                         </div>
                         <div>
-                            postId: {post?.id}
+                            postId: {post.id}
                         </div>
                         <div>
-                            Body: {post?.body}
+                            Body: {post.body}
                         </div>
                         <div>
-                            Created At: {post?.createdAt}    
+                            Created At: {post.createdAt}    
                         </div>
                     </div>
                     )

@@ -9,6 +9,11 @@ const UpdateForm = ({postId, onClose}) => {
     const post = useSelector(getOnePost(postId))
     const [body, setBody] = useState(post.body)
 
+    const handleTextareaInput = (e) => {
+        e.target.style.height = "auto";
+        e.target.style.height = e.target.scrollHeight + "px";
+    };
+
     useEffect(() => {
         if (postId){
             dispatch(fetchOnePost(postId))
@@ -23,7 +28,10 @@ const UpdateForm = ({postId, onClose}) => {
 
     return (
         <form onSubmit={handleUpdate}>
-            <textarea className="edit-post-input" onChange={(e) => setBody(e.target.value)} value={body}/>
+            <textarea className="edit-post-input" 
+                onChange={(e) => setBody(e.target.value)} 
+                onInput={handleTextareaInput}
+                value={body}/>
             <button type="submit" className="edit-save-button">Save</button>
         </form>
     )
