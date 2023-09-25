@@ -21,6 +21,8 @@ section, summary, time, mark, audio, video
 .post-index {
     padding: 1px;
     margin-left: -.1rem;
+    border: 1px solid red;
+    height: 100rem;
 }
 
 .post-container {
@@ -28,11 +30,90 @@ section, summary, time, mark, audio, video
     justify-content: center;
     border: 1px solid transparent;
     border-radius: 8px;
-    width: 538px;
     height: 10rem;
     padding: 10px;
     margin-bottom: 10px;
     background-color: white;
     box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
     font-size: 14px;
+    overflow: hidden;
+}
+
+.three-dots {
+    width: 1rem;
+    cursor: pointer;
+    margin-left: 4px;
+    margin-top: 4px;
+}
+
+.three-dots-container {
+    border-radius: 15px;
+    margin-left: 32rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: 0.2s ease-in-out;
+    margin-top: -3.3rem;
+}
+
+.three-dots-container:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.edit-dropdown-container {
+    width: 10rem;
+    border: 1px solid rgb(232, 232, 232);
+    background-color: white;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem 0 0.5rem 0.5rem;
+    margin-left: 23rem;
+    margin-top: 0rem;
+    height: fit-content;
+}
+
+.edit-pencil-container{
+    width: 8.8rem;
+    padding: 10px;
+    cursor: pointer;
+    height: 2rem;
+}
+
+.edit-pencil-container:hover {
+    background-color: rgba(0, 0, 0, 0.1);   
+}
+
+.edit-label{
+    margin-left: 2.2rem;
+    margin-top: -1.6rem;
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.edit-pencil {
+    width: 1.5rem;
+    margin-top: 0.3rem;
+}
+
+.trash-container {
+    padding: 10px;
+    height: 2rem;
+    width: 8.8rem;
+    cursor: pointer;
+}
+
+.trash-container:hover {
+    background-color: rgba(0, 0, 0, 0.1);   
+}
+
+.trash {
+    width: 1.8rem;
+    margin-left: -0.1rem;
+}
+
+.delete-label {
+    margin-left: 2.3rem;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: -1.7rem;;
+    opacity: 0.7;
 }

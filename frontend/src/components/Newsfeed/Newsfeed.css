@@ -21,6 +21,7 @@ section, summary, time, mark, audio, video
 .newsfeed-container {
     margin-top: 3.5rem;
     background-color: rgb(241, 240, 238);
+    height: 100vh;
 }
 
 .newsfeed-grid {
@@ -50,8 +51,7 @@ section, summary, time, mark, audio, video
 
 .post-index-container {
     position: static;
-    width: fit-content;
-    height: 100rem;
+    height: fit-content;
     margin-top: 2.3rem;
     padding: 1px;
 }

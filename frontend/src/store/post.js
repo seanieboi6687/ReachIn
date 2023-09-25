@@ -41,6 +41,21 @@ export const createPost = post => async dispatch => {
     }
 }
 
+export const updatePost = post => async dispatch => {
+    const response = await csrfFetch(`/api/posts/${post.id}`, {
+        method: 'PATCH',
+        body: JSON.stringify(post),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    if (response.ok){
+        const data = await response.json()
+        dispatch(receivePost(data.post))
+        return data
+    }
+}
+
 export const fetchAllPosts = () => async dispatch => {
     const response = await csrfFetch('/api/posts')
 
