@@ -2,7 +2,8 @@ import '../../components/PostIndex/PostIndex.css'
 import { fetchAllPosts, getPosts } from '../../store/post'
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
-import OptionButton from '../PostOptionButton'
+import pencil from '../../components/PostIndex/editpencil.png'
+import trash from '../../components/PostIndex/posttrash.png'
 
 const PostIndex = () => {
     const dispatch = useDispatch()
@@ -20,16 +21,23 @@ const PostIndex = () => {
                 if (sessionUser.id === post.authorId){
                     return (
                         <div className='post-container'>
-                            <div>
-                                author_id: {post.authorId}
+                            <div className="edit-pencil-container">
+                                <img className="edit-pencil" src={pencil} />
                             </div>
-                            <div>
-                                Body: {post.body}
+                            <div className="trash-container">
+                                <img className="trash" src={trash} />
                             </div>
-                            <div>
-                                Created At: {post.createdAt}
+                            <div className='post-contents'>
+                                <div>
+                                    author_id: {post.authorId}
+                                </div>
+                                <div>
+                                    Body: {post.body}
+                                </div>
+                                <div>
+                                    Created At: {post.createdAt}
+                                </div>
                             </div>
-                            <OptionButton />
                         </div>
                     )
                 } else {

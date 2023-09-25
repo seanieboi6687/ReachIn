@@ -21,8 +21,9 @@ section, summary, time, mark, audio, video
 .post-index {
     padding: 1px;
     margin-left: -.1rem;
-    border: 1px solid red;
+    /* height: fit-content; */
     height: 100rem;
+    border: 1px solid red;
 }
 
 .post-container {
@@ -39,42 +40,15 @@ section, summary, time, mark, audio, video
     overflow: hidden;
 }
 
-.three-dots {
-    width: 1rem;
-    cursor: pointer;
-    margin-left: 4px;
-    margin-top: 4px;
-}
-
-.three-dots-container {
-    border-radius: 15px;
-    margin-left: 32rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    transition: 0.2s ease-in-out;
-    margin-top: -3.3rem;
-}
-
-.three-dots-container:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-.edit-dropdown-container {
-    width: 10rem;
-    border: 1px solid rgb(232, 232, 232);
-    background-color: white;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 0.5rem 0 0.5rem 0.5rem;
-    margin-left: 23rem;
-    margin-top: 0rem;
-    height: fit-content;
-}
-
 .edit-pencil-container{
-    width: 8.8rem;
-    padding: 10px;
+    margin-left: 31.8rem;
+    margin-top: -0.5rem;
+    width: fit-content;
     cursor: pointer;
-    height: 2rem;
+    height: fit-content;
+    margin-top: rem;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 .edit-pencil-container:hover {
@@ -91,14 +65,16 @@ section, summary, time, mark, audio, video
 
 .edit-pencil {
     width: 1.5rem;
-    margin-top: 0.3rem;
 }
 
 .trash-container {
-    padding: 10px;
-    height: 2rem;
-    width: 8.8rem;
+    margin-left: 29.5rem;
+    margin-top: -2.3rem;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 10px;
     cursor: pointer;
+    padding: 5px;
 }
 
 .trash-container:hover {
@@ -106,8 +82,7 @@ section, summary, time, mark, audio, video
 }
 
 .trash {
-    width: 1.8rem;
-    margin-left: -0.1rem;
+    width: 1.6rem;
 }
 
 .delete-label {

@@ -25,6 +25,14 @@ export const getPosts = state => {
     }
 }
 
+export const getOnePost = postId => state => {
+    if (state.posts){
+        return state.posts[postId]
+    } else {
+        return null
+    }
+}
+
 export const createPost = post => async dispatch => {
     const response = await csrfFetch('/api/posts', {
         method: 'POST',
@@ -51,8 +59,8 @@ export const updatePost = post => async dispatch => {
     })
     if (response.ok){
         const data = await response.json()
-        dispatch(receivePost(data.post))
-        return data
+        dispatch(receivePost(data))
+        return response
     }
 }
 
@@ -64,6 +72,15 @@ export const fetchAllPosts = () => async dispatch => {
         const posts = data.posts;
         dispatch(receivePosts(posts));
         return response
+    }
+}
+
+export const fetchOnePost = id => async dispatch => {
+    const response = await fetch(`/api/posts/${id}`)
+
+    if (response.ok) {
+        const data = await response.json()
+        dispatch(receivePost(data))
     }
 }
 

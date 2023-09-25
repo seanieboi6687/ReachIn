@@ -43,6 +43,33 @@ section, summary, time, mark, audio, video
     grid-area: 1/2/1/2;
 }
 
+
+
+.newsfeed-divider-container {
+    margin-top: 0.5rem;
+    overflow: hidden;
+    height: 1rem;
+}
+
+.newsfeed-divider {
+    margin-left: 0.2rem;
+    width: 27rem;
+}
+
+.sorted-by {
+    margin-left: 28rem;
+    margin-top: -1.1rem;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.latest {
+    margin-left: 32.2rem;
+    margin-top: -0.95rem;
+    font-size: 13px;
+    font-weight: 600;
+}
+
 .right-container {
     grid-area: 1/3/1/3;
     justify-self: start;
@@ -52,8 +79,8 @@ section, summary, time, mark, audio, video
 .post-index-container {
     position: static;
     height: fit-content;
-    margin-top: 2.3rem;
     padding: 1px;
+    margin-top: 0.5rem;
 }
 
 .create-post-container {

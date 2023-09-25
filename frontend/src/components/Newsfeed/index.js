@@ -42,6 +42,11 @@ function Newsfeed() {
                             </div>
                         </div>
                     </div>
+                    <div className="newsfeed-divider-container">
+                        <hr className="newsfeed-divider" />
+                        <p className="sorted-by">Sorted by:</p>
+                        <p className="latest">Latest</p>
+                    </div>
                     <div className="post-index-container">
                         <PostIndex />
                     </div>
