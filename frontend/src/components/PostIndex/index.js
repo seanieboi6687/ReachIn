@@ -43,7 +43,7 @@ const PostIndex = () => {
                                         <p className='delete-post-question'>Are you sure you want to permanently remove this post from ReachIn?</p>
                                     </PostDeleteModal>
                             </div>
-                            <div className='post-contents'>
+                            <div className='post-contents1'>
                                 <div>
                                     {sessionUser.firstName} {sessionUser.lastName}
                                 </div>
@@ -59,11 +59,11 @@ const PostIndex = () => {
                                 <div className='post-interaction-container'>
                                     <div className='like-button-container'>
                                         <img className='like-png' src={likepng}/>
-                                        <label className='like-label'>Like</label>
+                                        <p className='like-label'>Like</p>
                                     </div>
                                     <div className='comment-button-container'>
                                         <img className='comment-png' src={commentpng}/>
-                                        <label className='comment-label'>Comment</label>
+                                        <p className='comment-label'>Comment</p>
                                     </div>
                                 </div>
                             </div>
@@ -71,18 +71,30 @@ const PostIndex = () => {
                     )
                 } else {
                 return (
-                    <div className='post-container'>
-                        <div>
-                            author_id: {post.authorId}
-                        </div>
-                        <div>
-                            postId: {post.id}
-                        </div>
-                        <div>
-                            Body: {post.body}
-                        </div>
-                        <div>
-                            Created At: {post.createdAt}    
+                    <div className='post-container2'>
+                        <div className='post-contents'>
+                            <div className='user-tag-container'>
+                                author_id: {post.authorId}
+                            </div>
+                            <div>
+                                Created At: {post.createdAt}
+                            </div>
+                            <div className='post-body-container'>
+                                {post.body}
+                            </div>
+                            <div>
+                                <hr className='post-index-divider'/>
+                            </div>
+                            <div className='post-interaction-container'>
+                                <div className='like-button-container'>
+                                    <img className='like-png' src={likepng} />
+                                    <p className='like-label'>Like</p>
+                                </div>
+                                <div className='comment-button-container'>
+                                    <img className='comment-png' src={commentpng} />
+                                    <p className='comment-label'>Comment</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     )

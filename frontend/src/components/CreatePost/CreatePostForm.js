@@ -37,7 +37,7 @@ const CreatePostForm = ({onClose}) => {
                 onInput={handleTextareaInput}
                 placeholder="What do you want to talk about?"
             />
-                <button type="submit" className="submit-create-post-button">Post</button>
+            <button type="submit" className="submit-create-post-button">Post</button>
         </form>
     );
 };

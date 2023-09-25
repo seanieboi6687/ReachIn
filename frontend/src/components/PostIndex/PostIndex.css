@@ -21,14 +21,27 @@ section, summary, time, mark, audio, video
 .post-index {
     padding: 1px;
     margin-left: -.1rem;
-    /* height: fit-content; */
-    height: 100rem;
+    height: fit-content;
+
 }
 
 .post-container {
     position: static;
     justify-content: center;
-    border: 1px solid transparent;
+    border-radius: 8px;
+    height: fit-content;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.post-container2 {
+    position: static;
+    justify-content: center;
     border-radius: 8px;
     height: fit-content;
     padding-left: 15px;
@@ -41,8 +54,8 @@ section, summary, time, mark, audio, video
 }
 
 .edit-pencil-container{
-    margin-left: 31.8rem;
-    margin-top: -0.5rem;
+    margin-left: 31.5rem;
+    margin-top: 0.5rem;
     width: fit-content;
     cursor: pointer;
     height: fit-content;
@@ -64,12 +77,12 @@ section, summary, time, mark, audio, video
 }
 
 .edit-pencil {
-    width: 1.5rem;
+    width: 1rem;
 }
 
 .trash-container {
-    margin-left: 29.5rem;
-    margin-top: -2.3rem;
+    margin-left: 29rem;
+    margin-top: -1.8rem;
     height: fit-content;
     width: fit-content;
     border-radius: 10px;
@@ -82,7 +95,7 @@ section, summary, time, mark, audio, video
 }
 
 .trash {
-    width: 1.6rem;
+    width: 1rem;
 }
 
 .delete-post-heading {
@@ -103,12 +116,11 @@ section, summary, time, mark, audio, video
     color: rgba(0, 0, 0, 0.6);
 }
 
-.post-contents{
+.post-contents1{
     margin-bottom: 0.5rem;
 }
 
 .post-body-container {
-    border: 1px solid red;
     height: fit-content;
 }
 
@@ -121,7 +133,6 @@ section, summary, time, mark, audio, video
 .post-interaction-container {
     display: grid;
     grid-template-columns: 48.25% 48.25% 3.5%;
-    border: 1px solid red;
     height: 2.5rem;
     width: 31.9rem;
     padding: 5px;
@@ -129,17 +140,15 @@ section, summary, time, mark, audio, video
 }
 
 .like-button-container {
-    border: 1px solid blue;
     grid-area: 1/1/1/2;
     cursor: pointer;
     transition: 0.1s ease-in-out;
     text-align: center;
-    overflow: hidden;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .comment-button-container {
-    border: 1px solid black;
     grid-area: 1/2/1/3;
     cursor: pointer;
     transition: 0.1s ease-in-out;
@@ -154,19 +163,23 @@ section, summary, time, mark, audio, video
 }
 
 .like-png {
-    width: 2.5rem;
-    margin-left: -2rem;
+    width: 2rem;
+    margin-left: -3rem;
+    margin-top: 0.35rem;
 }
 
 .like-label {
     color: rgba(0, 0, 0, 0.75);
     font-size: 16px;
     font-weight: 500;
+    margin-top: -1.6rem;
+    margin-left: 1.5rem;
 }
 
 .comment-png {
-    width: 2.5rem;
-    margin-left: -3.5rem;
+    width: 2rem;
+    margin-left: -5rem;
+    margin-top: 0.25rem;
 }
 
 .comment-label{
@@ -174,4 +187,10 @@ section, summary, time, mark, audio, video
     color: rgba(0, 0, 0, 0.75);
     font-size: 16px;
     font-weight: 500;   
+    margin-top: -1.8rem;
+    margin-left: 2.5rem;
+}
+
+.user-tag-container{
+    margin-top: 3rem;
 }
