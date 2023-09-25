@@ -4,12 +4,16 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import pencil from '../../components/PostIndex/editpencil.png'
 import trash from '../../components/PostIndex/posttrash.png'
+import PostDeleteModal from './PostDeleteModal'
+import { useState } from 'react'
 
 const PostIndex = () => {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user);
     const posts = useSelector(getPosts)
     const postsReverse = [...posts].reverse()
+    const [isOpen, setIsOpen] = useState(false)
+
     useEffect(() => {
         dispatch(fetchAllPosts())
     },[dispatch])
@@ -25,7 +29,10 @@ const PostIndex = () => {
                                 <img className="edit-pencil" src={pencil} />
                             </div>
                             <div className="trash-container">
-                                <img className="trash" src={trash} />
+                                <img onClick={() => setIsOpen(true)}className="trash" src={trash} />
+                                    <PostDeleteModal open={isOpen} onClose={() => setIsOpen(false)}>
+                                        Hi from Delete Modal
+                                    </PostDeleteModal>
                             </div>
                             <div className='post-contents'>
                                 <div>

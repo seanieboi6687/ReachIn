@@ -23,7 +23,6 @@ section, summary, time, mark, audio, video
     margin-left: -.1rem;
     /* height: fit-content; */
     height: 100rem;
-    border: 1px solid red;
 }
 
 .post-container {

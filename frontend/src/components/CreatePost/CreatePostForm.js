@@ -3,7 +3,6 @@ import { createPost } from "../../store/post";
 import { useDispatch } from "react-redux";
 
 const CreatePostForm = () => {
-    const [errorMessages, setErrorMessages] = useState({})
     const [body, setBody] = useState('')
     const dispatch = useDispatch();
 

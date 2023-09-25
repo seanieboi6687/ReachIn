@@ -3,7 +3,7 @@ import '../../components/Newsfeed/Newsfeed.css'
 import PostIndex from "../PostIndex";
 import { useSelector } from "react-redux";
 import defaultProfile from '../../components/Profilebutton/profile-default.png'
-import Modal from "../CreatePost/Modal";
+import CreatePostModal from "../CreatePost/CreatePostModal";
 import { useState } from "react";
 import CreatePostForm from "../CreatePost/CreatePostForm";
 import me from '../../components/Newsfeed/me.png'
@@ -35,9 +35,9 @@ function Newsfeed() {
                             <div className="post-create-input-container">
                                 <button onClick={() => setIsOpen(true)} className="start-post-create-button">Start a post</button>
                                 <div className="modal-container">
-                                    <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+                                    <CreatePostModal open={isOpen} onClose={() => setIsOpen(false)}>
                                         <CreatePostForm/>
-                                    </Modal>
+                                    </CreatePostModal>
                                 </div>
                             </div>
                         </div>
