@@ -162,7 +162,7 @@ section, summary, time, mark, audio, video
     position: relative;
     border: 2px solid transparent;
     box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
-    animation: pulse 2s infinite alternate;
+    animation: pulse 1.5s infinite alternate;
 }
 
 .about {

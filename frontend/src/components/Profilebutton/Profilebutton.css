@@ -101,6 +101,10 @@ section, summary, time, mark, audio, video
     cursor: pointer;
 }
 
+.sign-out-button:hover {
+    text-decoration: underline;
+}
+
 .divider-drop1 {
     margin-left: -0.4rem;
     margin-top: 14rem;

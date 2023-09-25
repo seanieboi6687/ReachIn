@@ -13,6 +13,7 @@ const PostIndex = () => {
     const posts = useSelector(getPosts)
     const postsReverse = [...posts].reverse()
     const [isOpen, setIsOpen] = useState(false)
+    const [openPostId, setOpenPostId] = useState(null);
 
     useEffect(() => {
         dispatch(fetchAllPosts())
@@ -29,20 +30,24 @@ const PostIndex = () => {
                                 <img className="edit-pencil" src={pencil} />
                             </div>
                             <div className="trash-container">
-                                <img onClick={() => setIsOpen(true)}className="trash" src={trash} />
-                                    <PostDeleteModal open={isOpen} onClose={() => setIsOpen(false)}>
-                                        Hi from Delete Modal
+                                <img onClick={() => setOpenPostId(post.id)}className="trash" src={trash} />
+                                    <PostDeleteModal postId={post.id} open={openPostId === post.id} onClose={() => setOpenPostId(null)}>
+                                        <h1 className='delete-post-heading'>Delete post?</h1>
+                                        <p className='delete-post-question'>Are you sure you want to permanently remove this post from ReachIn?</p>
                                     </PostDeleteModal>
                             </div>
                             <div className='post-contents'>
                                 <div>
-                                    author_id: {post.authorId}
+                                    author_id: {post?.authorId}
                                 </div>
                                 <div>
-                                    Body: {post.body}
+                                    postId: {post?.id}
                                 </div>
                                 <div>
-                                    Created At: {post.createdAt}
+                                    Body: {post?.body}
+                                </div>
+                                <div>
+                                    Created At: {post?.createdAt}
                                 </div>
                             </div>
                         </div>
@@ -51,13 +56,16 @@ const PostIndex = () => {
                 return (
                     <div className='post-container'>
                         <div>
-                            author_id: {post.authorId}
+                            author_id: {post?.authorId}
                         </div>
                         <div>
-                            Body: {post.body}
+                            postId: {post?.id}
                         </div>
                         <div>
-                            Created At: {post.createdAt}    
+                            Body: {post?.body}
+                        </div>
+                        <div>
+                            Created At: {post?.createdAt}    
                         </div>
                     </div>
                     )

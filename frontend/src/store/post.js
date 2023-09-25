@@ -2,6 +2,7 @@ import csrfFetch from "./csrf";
 
 export const RECEIVE_POSTS = 'posts/RECEIVE_POSTS'
 export const RECEIVE_POST = 'posts/RECEIVE_POST'
+export const REMOVE_POST = 'posts/REMOVE_POST'
 
 export const receivePosts = posts => {
     return {
@@ -30,6 +31,13 @@ export const getOnePost = postId => state => {
         return state.posts[postId]
     } else {
         return null
+    }
+}
+
+export const removePost = postId => {
+    return {
+        type: REMOVE_POST,
+        postId
     }
 }
 
@@ -76,11 +84,21 @@ export const fetchAllPosts = () => async dispatch => {
 }
 
 export const fetchOnePost = id => async dispatch => {
-    const response = await fetch(`/api/posts/${id}`)
+    const response = await csrfFetch(`/api/posts/${id}`)
 
     if (response.ok) {
         const data = await response.json()
         dispatch(receivePost(data))
+    }
+}
+
+export const deletePost = postId => async dispatch => {
+    const response = await csrfFetch(`/api/posts/${postId}`, {
+        method: 'DELETE'
+    })
+
+    if (response.ok) {
+        dispatch(removePost(postId))
     }
 }
 
@@ -92,6 +110,9 @@ const postsReducer = (state = {}, action) => {
             return {...nextState, ...action.posts}
         case RECEIVE_POST:
             return {...nextState, [action.post.id]: action.post}
+        case REMOVE_POST:
+            delete nextState[action.postId]
+            return nextState
         default:
             return state
     }

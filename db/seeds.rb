@@ -10,9 +10,10 @@ ApplicationRecord.transaction do
 
   User.destroy_all
 
-  puts "Resetting primary keys..."
+  puts "Resetting primary keys for users and posts..."
 
   ApplicationRecord.connection.reset_pk_sequence!('users')
+  ApplicationRecord.connection.reset_pk_sequence!('posts')
 #   ApplicationRecord.connection.reset_pk_sequence!('posts')
 
   puts "Creating users..."
