@@ -12,7 +12,6 @@ const PostIndex = () => {
     const sessionUser = useSelector(state => state.session.user);
     const posts = useSelector(getPosts)
     const postsReverse = [...posts].reverse()
-    const [isOpen, setIsOpen] = useState(false)
     const [openPostId, setOpenPostId] = useState(null);
 
     useEffect(() => {
@@ -28,6 +27,7 @@ const PostIndex = () => {
                         <div className='post-container'>
                             <div className="edit-pencil-container">
                                 <img className="edit-pencil" src={pencil} />
+                                
                             </div>
                             <div className="trash-container">
                                 <img onClick={() => setOpenPostId(post.id)}className="trash" src={trash} />
