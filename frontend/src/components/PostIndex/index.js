@@ -1,4 +1,4 @@
-import '../../components/PostIndex/PostIndex.css'
+import './PostIndex.css'
 import { fetchAllPosts, getPosts } from '../../store/post'
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
@@ -11,6 +11,9 @@ import UpdateForm from '../UpdatePost/UpdateForm'
 import likepng from './likepng.png'
 import commentpng from './commentpng.png'
 import Comment from '../Comment/Comment'
+import defaultpfp from '../../components/Profilebutton/profile-default.png'
+import { getUsers } from '../../store/user'
+import { fetchUsers } from '../../store/user'
 
 const PostIndex = () => {
     const dispatch = useDispatch()
@@ -24,13 +27,13 @@ const PostIndex = () => {
     useEffect(() => {
         dispatch(fetchAllPosts())
     },[dispatch])
-    console.log(posts)
+
+    const usersState = useSelector(getUsers)
+    const allUsers = usersState[3]
+    console.log(allUsers)
 
     const handleOpening = (postId) => {
-        setCommentOpen((prevState) => ({
-            ...prevState,
-            [postId]: !prevState[postId], // Toggle the state for the specific post
-        }));
+        setCommentOpen((prevState) => ({...prevState, [postId]: !prevState[postId]}));
     };
 
     return (
@@ -40,28 +43,34 @@ const PostIndex = () => {
                 if (sessionUser.id === post.authorId){
                     return (
                         <div className='post-container' key={post.id}>
-                            <div className="edit-pencil-container">
-                                <img onClick={() => setOpenEditPostId(post.id)} className="edit-pencil" src={pencil} />
-                                <EditPostModal postId={post.id} open={openEditPostId === post.id} onClose={() => setOpenEditPostId(null)}>
-                                    <UpdateForm postId={openEditPostId} onClose={() => setOpenEditPostId(null)} />
-                                </EditPostModal>
-                            </div>
-                            <div className="trash-container">
-                                <img onClick={() => setOpenPostId(post.id)} className="trash" src={trash} />
+                            <div className='post-contents1'>
+                                <div className="edit-pencil-container">
+                                    <img onClick={() => setOpenEditPostId(post.id)} className="edit-pencil" src={pencil} />
+                                    <EditPostModal postId={post.id} open={openEditPostId === post.id} onClose={() => setOpenEditPostId(null)}>
+                                        <UpdateForm postId={openEditPostId} onClose={() => setOpenEditPostId(null)} />
+                                    </EditPostModal>
+                                </div>
+                                <div className="trash-container">
+                                    <img onClick={() => setOpenPostId(post.id)} className="trash" src={trash} />
                                     <PostDeleteModal postId={post.id} open={openPostId === post.id} onClose={() => setOpenPostId(null)}>
                                         <h1 className='delete-post-heading'>Delete post?</h1>
                                         <p className='delete-post-question'>Are you sure you want to permanently remove this post from ReachIn?</p>
                                     </PostDeleteModal>
-                            </div>
-                            <div className='post-contents1'>
-                                <div>
+                                </div>
+                                <div className='pfp-container'>
+                                    <img className="default-post-pfp" src={defaultpfp}></img>
+                                </div>
+                                <div className='post-user-name-container'>
                                     {sessionUser.firstName} {sessionUser.lastName}
                                 </div>
-                                <div>
-                                    Created At: {post.createdAt}
+                                <div className='timestamp-container1'>
+                                    {(new Date(post.createdAt)).toLocaleDateString('en-US')}
                                 </div>
                                 <div className='post-body-container'>
                                     {post.body}
+                                </div>
+                                <div className='post-image-container'>
+                                    <img className="post-attached-image" src={post.photoUrl} alt=''/>
                                 </div>
                                 <div>
                                     <hr className='post-index-divider'/>
@@ -77,23 +86,32 @@ const PostIndex = () => {
                                     </div>
                                 </div>
                                 <div className='comment-section-container'>
-                                    {isOpen && <Comment open={commentOpen}/>}
+                                    {isOpen && <Comment postId={post.id} open={commentOpen}/>}
                                 </div>
                             </div>
                         </div>
                     )
                 } else {
+                    const authorid = post.authorId
+                    const fname = allUsers[authorid].firstName
+                    const lname = allUsers[authorid].lastName
                 return (
                     <div className='post-container2'>
-                        <div className='post-contents'>
-                            <div className='user-tag-container'>
-                                author_id: {post.authorId}
+                        <div className='post-contents2'>
+                            <div className='pfp-container2'>
+                                <img className="default-post-pfp" src={defaultpfp}></img>
                             </div>
-                            <div>
-                                Created At: {post.createdAt}
+                            <div className='user-tag-container'>
+                                {fname} {lname}
+                            </div>
+                            <div className='timestamp-container2'>
+                                {(new Date(post.createdAt)).toLocaleDateString('en-US')}
                             </div>
                             <div className='post-body-container'>
                                 {post.body}
+                            </div>
+                            <div className='post-image-container'>
+                                <img className="post-attached-image" src={post.photoUrl} alt=''/>
                             </div>
                             <div>
                                 <hr className='post-index-divider'/>
@@ -103,13 +121,13 @@ const PostIndex = () => {
                                     <img className='like-png' src={likepng} />
                                     <p className='like-label'>Like</p>
                                 </div>
-                                <div className='comment-button-container' onClick={() => setCommentOpen(true)}>
+                                <div className='comment-button-container' onClick={() => handleOpening(post.id)}>
                                     <img className='comment-png' src={commentpng} />
                                     <p className='comment-label'>Comment</p>
                                 </div>
-                                <div className='comment-section-container'>
-                                    <Comment open={commentOpen} onClose={() => setCommentOpen(false)}/>
-                                </div>
+                            </div>
+                            <div className='comment-section-container'>
+                                {isOpen && <Comment postId={post.id} open={commentOpen} />}
                             </div>
                         </div>
                     </div>

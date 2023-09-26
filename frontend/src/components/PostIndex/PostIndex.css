@@ -30,8 +30,8 @@ section, summary, time, mark, audio, video
     justify-content: center;
     border-radius: 8px;
     height: fit-content;
-    padding-left: 15px;
-    padding-right: 15px;
+    /* padding-left: 15px;
+    padding-right: 15px; */
     margin-bottom: 10px;
     background-color: white;
     box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
@@ -44,8 +44,8 @@ section, summary, time, mark, audio, video
     justify-content: center;
     border-radius: 8px;
     height: fit-content;
-    padding-left: 15px;
-    padding-right: 15px;
+    /* padding-left: 15px;
+    padding-right: 15px; */
     margin-bottom: 10px;
     background-color: white;
     box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
@@ -54,14 +54,12 @@ section, summary, time, mark, audio, video
 }
 
 .edit-pencil-container{
-    margin-left: 31.5rem;
-    margin-top: 0.5rem;
+    margin-left: 32.5rem;
     width: fit-content;
     cursor: pointer;
     height: fit-content;
-    margin-top: rem;
     border-radius: 10px;
-    padding: 5px;
+    padding: 8px;
 }
 
 .edit-pencil-container:hover {
@@ -81,8 +79,8 @@ section, summary, time, mark, audio, video
 }
 
 .trash-container {
-    margin-left: 29rem;
-    margin-top: -1.8rem;
+    margin-left: 30.5rem;
+    margin-top: -2rem;
     height: fit-content;
     width: fit-content;
     border-radius: 10px;
@@ -117,15 +115,24 @@ section, summary, time, mark, audio, video
 }
 
 .post-contents1{
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    height: fit-content;
+}
+
+.post-contents2 {
+    margin-bottom: 1rem;
+    height: fit-content;
 }
 
 .post-body-container {
     height: fit-content;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    margin-left: 0.6rem;
 }
 
 .post-index-divider {
-    margin-top: 3rem;
+    margin-top: 1rem;
     height: 1px;
     opacity: 0.5;
 }
@@ -134,7 +141,7 @@ section, summary, time, mark, audio, video
     display: grid;
     grid-template-columns: 48.25% 48.25% 3.5%;
     height: 2.5rem;
-    width: 31.9rem;
+    width: 99%;
     padding: 5px;
     grid-gap: 1rem;
 }
@@ -192,13 +199,16 @@ section, summary, time, mark, audio, video
 }
 
 .user-tag-container{
-    margin-top: 3rem;
+    width: fit-content;
+    margin-left: 4rem;
+    margin-top: -3rem;
+    font-weight: 600;
 }
 
 .comment-form-container {
     display: grid;
-    grid-template-columns: 10% 70% 20%;
-    grid-gap: 0.5rem;
+    grid-template-columns: 10% 75% 15%;
+    grid-gap: 0.2rem;
     height: 4rem;
 }
 
@@ -211,19 +221,22 @@ section, summary, time, mark, audio, video
     grid-area: 1/2/1/2;
     align-self: center;
     height: 3rem;
+    width: fit-content;
 }
 
 .submit-comment-button-container {
     grid-area: 1/3/1/3;
     align-self: center;
+    margin-left: -1rem;
+    width: fit-content;
 }
 
 .comment-profile-pic {
-    width: 3rem;
+    width: 3.5rem;
 }
 
 .comment-form {
-    width: 21rem;
+    width: 23rem;
     border-radius: 1.875rem;
     padding-left: 10px;
     padding-right: 10px;
@@ -260,4 +273,54 @@ section, summary, time, mark, audio, video
 
 .post-comment-button:hover{
     background-color: #004182;
+}
+
+.post-image-container{
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.post-attached-image {
+    width: 100%;
+    height: auto;
+}
+
+.pfp-container {
+    width: 4rem;
+    border-radius: 40px;
+    height: 4rem;
+    margin-top: -2rem;
+    overflow: hidden;
+}
+
+.pfp-container2 {
+    width: 4rem;
+    border-radius: 40px;
+    height: 4rem;
+    overflow: hidden;
+    margin-top: -.1rem;
+}
+
+.default-post-pfp {
+    width: 100%;
+}
+
+.post-user-name-container {
+    width: fit-content;
+    margin-left: 4rem;
+    font-weight: 600;
+    margin-top: -3rem;
+}
+
+.timestamp-container1 {
+    width: fit-content;
+    margin-left: 4rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.timestamp-container2 {
+    width: fit-content;
+    margin-left: 4rem;
+    color: rgba(0, 0, 0, 0.5);
 }

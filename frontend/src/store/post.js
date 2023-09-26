@@ -3,13 +3,11 @@ import csrfFetch from "./csrf";
 export const RECEIVE_POSTS = 'posts/RECEIVE_POSTS'
 export const RECEIVE_POST = 'posts/RECEIVE_POST'
 export const REMOVE_POST = 'posts/REMOVE_POST'
-export const RECIEVE_POST_COMMENT = 'posts/RECIEVE_POST_COMMENT';
-export const REMOVE_POST_COMMENT = 'posts/REMOVE_POST_COMMENT';
 
-export const receivePosts = posts => {
+export const receivePosts = data => {
     return {
         type: RECEIVE_POSTS,
-        posts
+        data
     }
 }
 
@@ -17,20 +15,6 @@ export const receivePost = post => {
     return {
         type: RECEIVE_POST,
         post
-    }
-}
-
-export const recievePostComment = (postId, commentId, comment) => {
-    return {
-        type: RECIEVE_POST_COMMENT,
-        postId, commentId, comment
-    }
-}
-
-export const removePostComment = (postId, commentId) => {
-    return {
-        type: REMOVE_POST_COMMENT,
-        postId, commentId
     }
 }
 
@@ -56,16 +40,6 @@ export const removePost = postId => {
         postId
     }
 }
-
-export const getComments = postId => state => {
-    if (state.posts[postId].comments) {
-        const comments = Object.values(state.posts[postId].comments);
-        return comments;
-    } else {
-        return null;
-    }
-}
-
 
 export const createPost = post => async dispatch => {
     const response = await csrfFetch('/api/posts', {
@@ -103,8 +77,7 @@ export const fetchAllPosts = () => async dispatch => {
 
     if (response.ok) {
         const data = await response.json();
-        const posts = data.posts;
-        dispatch(receivePosts(posts));
+        dispatch(receivePosts(data));
         return response
     }
 }
@@ -133,27 +106,12 @@ const postsReducer = (state = {}, action) => {
     const nextState = {...state}
     switch(action.type){
         case RECEIVE_POSTS:
-            return {...nextState, ...action.posts}
+            return {...nextState, ...action.data.posts}
         case RECEIVE_POST:
             return {...nextState, [action.post.id]: action.post}
         case REMOVE_POST:
             delete nextState[action.postId]
             return nextState
-        case RECIEVE_POST_COMMENT:
-            const comments = state[action.postId].comments || {};
-            return {...state, [action.postId]: 
-                        {...state[action.postId], comments: 
-                            {...comments, [action.commentId]: action.comment
-                            }
-                        }
-                    };
-        case REMOVE_POST_COMMENT:
-            const updatedComments = { ...state[action.postId].comments };
-            delete updatedComments[action.commentId];
-            return {...state, [action.postId]: 
-                        {...state[action.postId], comments: updatedComments
-                        }
-                    };
         default:
             return state
     }

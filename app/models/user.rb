@@ -54,4 +54,9 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     class_name: :Post,
     dependent: :destroy
+
+    has_many :comments,
+    foreign_key: :commenter_id,
+    class_name: :Comment,
+    dependent: :destroy
 end

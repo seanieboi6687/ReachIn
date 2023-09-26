@@ -1,7 +1,16 @@
 import React from "react";
 import defaultprofile from '../../components/Profilebutton/profile-default.png'
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchComments } from "../../store/comment";
+import { getComments } from "../../store/comment";
 
-const Comment = ({open}) => {
+const Comment = ({postId, open}) => {
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(fetchComments())
+    },[dispatch])
 
     if (!open) return null
 
@@ -12,7 +21,7 @@ const Comment = ({open}) => {
             </div>
             <form className="comment-input-container">
                 <div>
-                    <input type="text" className="comment-form" placeholder="Add a comment..."></input>
+                    <input type="text" className="comment-form" placeholder={postId}></input>
                 </div>
             </form>
             <div className="submit-comment-button-container">

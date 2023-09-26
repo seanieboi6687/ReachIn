@@ -2,6 +2,11 @@ class Api::UsersController < ApplicationController
 
     before_action :require_logged_out, only: [:create]
     wrap_parameters :user, include: [:firstName, :lastName, :phoneNumber, :gender, :email, :password]
+
+    def index
+        @users = User.all
+        render :index
+    end
     
     def create
         @user = User.new(user_params)
