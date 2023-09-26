@@ -10,6 +10,7 @@ import { useState } from 'react'
 import UpdateForm from '../UpdatePost/UpdateForm'
 import likepng from './likepng.png'
 import commentpng from './commentpng.png'
+import Comment from '../Comment/Comment'
 
 const PostIndex = () => {
     const dispatch = useDispatch()
@@ -18,18 +19,27 @@ const PostIndex = () => {
     const postsReverse = [...posts].reverse()
     const [openPostId, setOpenPostId] = useState(null);
     const [openEditPostId, setOpenEditPostId] = useState(null)
+    const [commentOpen, setCommentOpen] = useState({});
 
     useEffect(() => {
         dispatch(fetchAllPosts())
     },[dispatch])
     console.log(posts)
 
+    const handleOpening = (postId) => {
+        setCommentOpen((prevState) => ({
+            ...prevState,
+            [postId]: !prevState[postId], // Toggle the state for the specific post
+        }));
+    };
+
     return (
         <div className='post-index'>
             {postsReverse.map(post => {
+                const isOpen = commentOpen[post.id];
                 if (sessionUser.id === post.authorId){
                     return (
-                        <div className='post-container'>
+                        <div className='post-container' key={post.id}>
                             <div className="edit-pencil-container">
                                 <img onClick={() => setOpenEditPostId(post.id)} className="edit-pencil" src={pencil} />
                                 <EditPostModal postId={post.id} open={openEditPostId === post.id} onClose={() => setOpenEditPostId(null)}>
@@ -61,10 +71,13 @@ const PostIndex = () => {
                                         <img className='like-png' src={likepng}/>
                                         <p className='like-label'>Like</p>
                                     </div>
-                                    <div className='comment-button-container'>
+                                    <div className='comment-button-container' onClick={() => handleOpening(post.id)}>
                                         <img className='comment-png' src={commentpng}/>
                                         <p className='comment-label'>Comment</p>
                                     </div>
+                                </div>
+                                <div className='comment-section-container'>
+                                    {isOpen && <Comment open={commentOpen}/>}
                                 </div>
                             </div>
                         </div>
@@ -90,9 +103,12 @@ const PostIndex = () => {
                                     <img className='like-png' src={likepng} />
                                     <p className='like-label'>Like</p>
                                 </div>
-                                <div className='comment-button-container'>
+                                <div className='comment-button-container' onClick={() => setCommentOpen(true)}>
                                     <img className='comment-png' src={commentpng} />
                                     <p className='comment-label'>Comment</p>
+                                </div>
+                                <div className='comment-section-container'>
+                                    <Comment open={commentOpen} onClose={() => setCommentOpen(false)}/>
                                 </div>
                             </div>
                         </div>
