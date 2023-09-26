@@ -91,7 +91,13 @@ end
   comment2 = Comment.create!(
     content: "Woohoo, it works!",
     commenter_id: user2.id,
-    post_id: post1.id
+    post_id: post3.id
+  )
+
+  comment3 = Comment.create!(
+    content: "yeah! give them fwends!!!",
+    commenter_id: user3.id,
+    post_id: post2.id
   )
 
   puts "Done!"

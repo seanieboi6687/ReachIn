@@ -1,4 +1,5 @@
 import csrfFetch from "./csrf";
+import { RECEIVE_POSTS } from "./post";
 
 const RECEIVE_COMMENTS = 'comments/RECEIVE_COMMENTS';
 const RECEIVE_COMMENT = 'comments/RECEIVE_COMMENT';
@@ -8,18 +9,6 @@ const receiveComments = comments => ({
     comments
 });
 
-const receiveComment = comment => ({
-    type: RECEIVE_COMMENT,
-    comment
-});
-
-export const getComment = commentId => state => {
-    if (state.entities.comments && state.entities.comments[commentId]) {
-        return state.entities.comments[commentId];
-    } else {
-        return null;
-    }
-};
 
 export const getComments = state => {
     if (state.comments) {
@@ -38,15 +27,6 @@ export const fetchComments = () => async dispatch => {
     }
 };
 
-export const fetchComment = comment => async dispatch => {
-    const response = await csrfFetch(`/api/comments/${comment.id}`);
-    if (response.ok) {
-        const data = await response.json();
-        dispatch(receiveComment(data.comment));
-        return response;
-    }
-};
-
 const commentsReducer = (state = {}, action) => {
     Object.freeze(state);
     const nextState = { ...state };
@@ -58,6 +38,8 @@ const commentsReducer = (state = {}, action) => {
             }
         case RECEIVE_COMMENTS:
             return {...nextState, ...action.comments};
+        case RECEIVE_POSTS:
+            return {...nextState, ...action.data.comments}
         default:
             return state;
     };

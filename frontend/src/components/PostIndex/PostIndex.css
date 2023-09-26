@@ -209,7 +209,7 @@ section, summary, time, mark, audio, video
     display: grid;
     grid-template-columns: 10% 75% 15%;
     grid-gap: 0.2rem;
-    height: 4rem;
+    height: fit-content;
 }
 
 .comment-pfp-container {
@@ -323,4 +323,10 @@ section, summary, time, mark, audio, video
     width: fit-content;
     margin-left: 4rem;
     color: rgba(0, 0, 0, 0.5);
+}
+
+.comments-container {
+    border: 1px solid red;
+    width: 34.5rem;
+    height: fit-content;
 }

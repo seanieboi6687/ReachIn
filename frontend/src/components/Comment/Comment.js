@@ -5,12 +5,9 @@ import { useEffect } from "react";
 import { fetchComments } from "../../store/comment";
 import { getComments } from "../../store/comment";
 
-const Comment = ({postId, open}) => {
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        dispatch(fetchComments())
-    },[dispatch])
+const Comment = ({comments, postid, open}) => {
+    const allComments = useSelector(getComments)
+    console.log(allComments)
 
     if (!open) return null
 
@@ -21,11 +18,14 @@ const Comment = ({postId, open}) => {
             </div>
             <form className="comment-input-container">
                 <div>
-                    <input type="text" className="comment-form" placeholder={postId}></input>
+                    <input type="text" className="comment-form" placeholder="Add a comment..."></input>
                 </div>
             </form>
             <div className="submit-comment-button-container">
                 <button className="post-comment-button">Post</button>
+            </div>
+            <div className="comments-container">
+                comment place holder
             </div>
         </div>
     )

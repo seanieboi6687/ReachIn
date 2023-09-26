@@ -13,7 +13,6 @@ import commentpng from './commentpng.png'
 import Comment from '../Comment/Comment'
 import defaultpfp from '../../components/Profilebutton/profile-default.png'
 import { getUsers } from '../../store/user'
-import { fetchUsers } from '../../store/user'
 
 const PostIndex = () => {
     const dispatch = useDispatch()
@@ -28,9 +27,8 @@ const PostIndex = () => {
         dispatch(fetchAllPosts())
     },[dispatch])
 
-    const usersState = useSelector(getUsers)
-    const allUsers = usersState[3]
-    console.log(allUsers)
+    const state = useSelector(getUsers)
+    const allUsers = state[3]
 
     const handleOpening = (postId) => {
         setCommentOpen((prevState) => ({...prevState, [postId]: !prevState[postId]}));
@@ -86,7 +84,7 @@ const PostIndex = () => {
                                     </div>
                                 </div>
                                 <div className='comment-section-container'>
-                                    {isOpen && <Comment postId={post.id} open={commentOpen}/>}
+                                    {isOpen && <Comment postid={post.id} open={commentOpen}/>}
                                 </div>
                             </div>
                         </div>
@@ -127,7 +125,7 @@ const PostIndex = () => {
                                 </div>
                             </div>
                             <div className='comment-section-container'>
-                                {isOpen && <Comment postId={post.id} open={commentOpen} />}
+                                {isOpen && <Comment postid={post.id} open={commentOpen} />}
                             </div>
                         </div>
                     </div>
