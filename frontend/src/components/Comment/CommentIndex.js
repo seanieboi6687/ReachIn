@@ -21,7 +21,7 @@ const CommentIndex = ({postid}) => {
             if (sessionUser.id === comment.commenterId) {
                 return (
                     <>
-                        <img className="comment-default-pfp" src={commentdefaultprofile}></img>
+                        <img className="comment-default-pfp" src={commentdefaultprofile} alt=""></img>
                         <div className="comment-content-container">
                             <p className="commenter-name">{fname} {lname}</p>
                             <p className="comment-content1" key={comment.id}>{comment.content}</p>
@@ -31,7 +31,7 @@ const CommentIndex = ({postid}) => {
             } else {
                 return (
                     <>
-                        <img className="comment-default-pfp" src={commentdefaultprofile}></img>
+                        <img className="comment-default-pfp" src={commentdefaultprofile} alt=""></img>
                         <div className="comment-content-container">
                             <p className="commenter-name">{fname} {lname}</p>
                             <p className="comment-content1" key={comment.id}>{comment.content}</p>

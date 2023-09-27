@@ -90,7 +90,7 @@ function Newsfeed() {
                         </div>
                     </div>
                     <div className="right-container-footer">
-                        <img className="right-footer-logo" src={reachinlogo}></img>
+                        <img className="right-footer-logo" src={reachinlogo} alt=''></img>
                         <p className="right-footer-slogan">ReachIn Corporation © 2023</p>
                     </div>
                 </div>

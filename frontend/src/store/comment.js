@@ -9,6 +9,11 @@ const receiveComments = comments => ({
     comments
 });
 
+const receiveComment = comment => ({
+    type: RECEIVE_COMMENT,
+    comment
+});
+
 
 export const getComments = state => {
     if (state.comments) {
@@ -27,6 +32,24 @@ export const fetchComments = () => async dispatch => {
     }
 };
 
+export const createComment = comment => async dispatch => {
+    const { content, postId } = comment;
+    const response = await csrfFetch(`/api/comments`, {
+        method: 'POST',
+        body: JSON.stringify({
+            comment: {
+                content,
+                postId
+            }
+        })
+    });
+    const data = await response.json();
+    if (response.ok) {
+        dispatch(receiveComment(data.comment));
+        return response;
+    }
+};
+
 const commentsReducer = (state = {}, action) => {
     Object.freeze(state);
     const nextState = { ...state };
@@ -38,6 +61,8 @@ const commentsReducer = (state = {}, action) => {
             }
         case RECEIVE_COMMENTS:
             return {...nextState, ...action.comments};
+        case RECEIVE_COMMENT:
+            return {...nextState, [action.comment.id]: action.comment}
         case RECEIVE_POSTS:
             return {...nextState, ...action.data.comments}
         default:

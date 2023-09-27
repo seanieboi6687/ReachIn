@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { createPost } from "../../store/post";
 import { useDispatch } from "react-redux";
-import photoUpload from '../../components/CreatePost/photo-uploadpng.png'
 
 const CreatePostForm = ({onClose}) => {
     const [body, setBody] = useState('')
@@ -48,7 +47,7 @@ const CreatePostForm = ({onClose}) => {
     };
 
     let preview = null;
-    if (photoUrl) preview = <img className="preview-image" src={photoUrl}/>
+    if (photoUrl) preview = <img className="preview-image" src={photoUrl} alt=""/>
 
     return (
         <form onSubmit={handleSubmit}>
