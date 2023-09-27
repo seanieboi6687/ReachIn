@@ -25,7 +25,7 @@ function Newsfeed() {
                 <div className="left-container">
                         <div className="side-profile-container">
                             <img className="side-profile-post" src={defaultProfile} alt="default"></img>
-                            <div className="user-name-text">{sessionUser.firstName} {sessionUser.lastName}</div>
+                            <div className="user-name-text">{sessionUser?.firstName} {sessionUser?.lastName}</div>
                             <div className="side-profile-divider-container">
                                 <hr className="side-profile-divider"/>
                             <div className="profile-viewers-container">

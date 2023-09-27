@@ -38,7 +38,8 @@ const PostIndex = () => {
         <div className='post-index'>
             {postsReverse.map(post => {
                 const isOpen = commentOpen[post.id];
-                if (sessionUser.id === post.authorId){
+                console.log(post)
+                if (sessionUser?.id === post?.authorId){
                     return (
                         <div className='post-container' key={post.id}>
                             <div className='post-contents1'>

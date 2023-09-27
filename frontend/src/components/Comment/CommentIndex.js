@@ -17,9 +17,10 @@ const CommentIndex = ({postid}) => {
         dispatch(fetchComments())
     }, [dispatch])
 
-    const filteredComments = allComments.filter(comment => comment.postId === postid)
+    const filteredComments = allComments.slice(0, allComments.length - 1).filter(comment => comment.postId === postid)
     const allUsers = state[3]
 
+    console.log(allComments)
     return (
         filteredComments.map(comment => {
             const commenterid = comment.commenterId
