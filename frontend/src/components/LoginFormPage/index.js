@@ -16,7 +16,7 @@ function LoginFormPage() {
   const [errors, setErrors] = useState([])
   const history = useHistory();
 
-  if (sessionUser) return <Redirect to="/" />;
+  if (sessionUser) return <Redirect to="/newsfeed" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();

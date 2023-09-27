@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
-import * as sessionActions from '../../store/session';
+import { logout } from "../../store/session";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import '../../components/Profilebutton/Profilebutton.css'
 import defaultProfile from '../../components/Profilebutton/profile-default.png'
@@ -27,9 +27,9 @@ function ProfileButton({ user }) {
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
-  const logout = (e) => {
+  const signout = (e) => {
     e.preventDefault();
-    dispatch(sessionActions.logout());
+    dispatch(logout());
     history.push("/login")
   };
 
@@ -50,7 +50,7 @@ function ProfileButton({ user }) {
             </button>
             <li>
               <div className="divider-drop1"/>
-              <button className="sign-out-button" onClick={logout}>Sign Out</button>
+              <button className="sign-out-button" onClick={signout}>Sign Out</button>
             </li>
           </ul>)}
       </div>
