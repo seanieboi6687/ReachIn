@@ -6,7 +6,6 @@ import { useState } from "react";
 import { createComment } from "../../store/comment";
 
 const Comment = ({postid, open}) => {
-    const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch()
     const [content, setContent] = useState("")
 

@@ -3,6 +3,7 @@ import { RECEIVE_POSTS } from "./post";
 
 const RECEIVE_COMMENTS = 'comments/RECEIVE_COMMENTS';
 const RECEIVE_COMMENT = 'comments/RECEIVE_COMMENT';
+const REMOVE_COMMENT = 'comments/REMOVE_COMMENT';
 
 const receiveComments = comments => ({
     type: RECEIVE_COMMENTS,
@@ -12,6 +13,11 @@ const receiveComments = comments => ({
 const receiveComment = comment => ({
     type: RECEIVE_COMMENT,
     comment
+});
+
+const removeComment = commentId => ({
+    type: REMOVE_COMMENT,
+    commentId
 });
 
 
@@ -47,6 +53,15 @@ export const createComment = comment => async dispatch => {
     if (response.ok) {
         dispatch(receiveComment(data.comment));
         return response;
+    }
+};
+
+export const deleteComment = commentId => async dispatch => {
+    const response = await csrfFetch(`/api/comments/${commentId}`, {
+        method: 'DELETE'
+    });
+    if (response.ok) {
+        dispatch(removeComment(commentId));
     }
 };
 
