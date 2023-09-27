@@ -29,11 +29,28 @@ export const getComments = state => {
     }
 }
 
+export const getOneComment = commentId => state => {
+    if (state.comments && state.comments[commentId]) {
+        return state.comments[commentId];
+    } else {
+        return null;
+    }
+};
+
 export const fetchComments = () => async dispatch => {
     const response = await csrfFetch('/api/comments');
     if (response.ok) {
         const comments = await response.json();
         dispatch(receiveComments(comments));
+        return response;
+    }
+};
+
+export const fetchComment = commentId => async dispatch => {
+    const response = await csrfFetch(`/api/comments/${commentId}`);
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(receiveComment(data.comment));
         return response;
     }
 };
@@ -47,6 +64,23 @@ export const createComment = comment => async dispatch => {
                 content,
                 postId
             }
+        })
+    });
+    const data = await response.json();
+    if (response.ok) {
+        dispatch(receiveComment(data.comment));
+        return response;
+    }
+};
+
+export const updateComment = comment => async dispatch => {
+    const { id, content, postId } = comment;
+    const response = await csrfFetch(`/api/comments/${comment.id}`, {
+        method: 'PATCH',
+        body: JSON.stringify({
+            id,
+            content,
+            postId
         })
     });
     const data = await response.json();

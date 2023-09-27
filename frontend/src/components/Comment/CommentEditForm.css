@@ -18,59 +18,37 @@ section, summary, time, mark, audio, video
     vertical-align: baseline;
 }
 
-.comment-content1 {
-    font-size: 14px;
-    margin-top: 0.5rem;
+.edit-comment-input {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 39.2rem;
+    margin-top: 1rem;
+    vertical-align: top;
+    outline: none;
+    height: auto;
+    overflow-y: hidden;
+    font-size: 18px;
+    font-family: inherit;
+    resize: none;
+    padding: 5px;
 }
 
-.comment-default-pfp {
-    width: 3.5rem;
-    margin-top: -0.5rem;
-}
-
-.comment-content-container {
+.comment-edit-save-button {
+    border: none;
+    border-radius: 25px;
     padding-top: 5px;
     padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 15px;
-    background-color: rgb(235, 235, 235);
-    border-radius: 0px 5px 5px 5px;
-    min-height: 4rem;
-    width: 28.5rem;
-}
-
-.commenter-name1 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: -1.3rem;
-}
-
-.commenter-name2 {
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.comment-delete-button {
-    margin-left: 26rem;
-    width: 1rem;
+    margin-left: 35rem;
+    margin-top: 1.75rem;
     cursor: pointer;
-    border-radius: 4px;
-    transition: 0.1s ease-in-out;
+    background-color: #0a66c2;
+    color: white;
+    font-size: 1rem;
+    width: 5rem;
+    font-weight: 600;
+    transition: 0.2s ease-in-out;
 }
 
-.comment-delete-button:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-.comment-edit-button{
-    width: 1rem;
-    margin-left: 0.5rem;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: 0.1s ease-in-out;
-}
-
-.comment-edit-button:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+.comment-edit-save-button:hover {
+    background-color: #004182;
 }

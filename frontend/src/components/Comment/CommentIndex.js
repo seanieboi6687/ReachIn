@@ -8,6 +8,7 @@ import { deleteComment } from "../../store/comment";
 import commenttrash from '../../components/PostIndex/posttrash.png'
 import commentedit from '../../components/PostIndex/editpencil.png'
 import EditCommentModal from "./CommentEditModal";
+import CommentUpdateForm from "./CommentEditForm";
 
 const CommentIndex = ({postid}) => {
     const sessionUser = useSelector(state => state.session.user);
@@ -39,7 +40,7 @@ const CommentIndex = ({postid}) => {
                                 onClick={() => setEditOpen(true)}>
                             </img>
                             <EditCommentModal commentid={comment.id} open={editOpen} onClose={()=> setEditOpen(false)}>
-                                Comment Edit Form Container
+                                <CommentUpdateForm commentId={comment.id} onClose={() => setEditOpen(false)}/>
                             </EditCommentModal>
                             <p className="commenter-name1">{fname} {lname}</p>
                             <p className="comment-content1" key={comment.id}>{comment.content}</p>
