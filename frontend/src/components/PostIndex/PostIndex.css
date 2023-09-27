@@ -206,6 +206,8 @@ section, summary, time, mark, audio, video
 }
 
 .comment-form-container {
+    padding-left: 5px;
+    padding-right: 5px;
     display: grid;
     grid-template-columns: 10% 75% 15%;
     grid-gap: 0.2rem;
@@ -326,7 +328,9 @@ section, summary, time, mark, audio, video
 }
 
 .comments-container {
-    border: 1px solid red;
-    width: 34.5rem;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    padding-top: 15px;
+    width: 33.8rem;
     height: fit-content;
 }

@@ -18,16 +18,25 @@ section, summary, time, mark, audio, video
     vertical-align: baseline;
 }
 
-.modal-close-button {
+.modal-top-banner-container{
+    display: grid;
+    grid-template-columns: 10% 40% 50%;
     position: fixed;
+    height: fit-content;
+    width: 45rem;
+    margin-left: -30px;
+    background-color: white;
+    border-radius: 10px;
+}
+.modal-close-button {
     background-color: transparent;
     border-radius: 30px;
-    margin-left: 40.5rem;
-    margin-top: -1.9rem;
     font-size: 24px;
     cursor: pointer;
     width: 2.5rem;
     transition: 0.2s ease-in-out;
+    margin-left: 19.5rem;
+    margin-top: 0.5rem;
 }
 
 .modal-close-button:hover {
@@ -35,10 +44,8 @@ section, summary, time, mark, audio, video
 }
 
 .post-body-input {
-    position: fixed;
-    width: 42.5rem;
-    margin-left: -0.75rem;
-    margin-top: 4rem;
+    width: 99%;
+    margin-top: 7rem;
     vertical-align: top;
     border: none;
     outline: none;
@@ -47,31 +54,33 @@ section, summary, time, mark, audio, video
     font-size: 18px;
     font-family: inherit;
     resize: none;
-    cursor: default;
+    cursor: pointer;
 }
 
 .modal-profile-pic {
-    position: fixed;
     width: 5rem;
-    margin-top: -2rem;
-    margin-left: -0.75vw;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
 }
 
 .modal-user-name {
-    position: fixed;
-    margin-left: 4.5rem;
+    margin-top: 2.25rem;
     font-weight: 600;
     font-size: 1.5rem;
-    margin-top: -0.5rem;
+    margin-left: 1.5rem;
+}
+
+.post-form-button-container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 7rem;
 }
 
 .submit-create-post-button {
-    position: absolute;
-    width: 4.5rem;
-    margin-left: 37.5rem;
-    margin-top: 30.5rem;
+    height: 2rem;
+    width: 6rem;
     border-radius: 1.875rem;
-    padding: 0.4rem;
+    margin-left: 14.5rem;
     border: none;
     cursor: pointer;
     background-color: #0a66c2;
@@ -79,7 +88,6 @@ section, summary, time, mark, audio, video
     font-size: 1rem;
     font-weight: 600;
     text-align: center;
-    line-height: 1.25;
     transition: 0.2s ease-in-out;
 }
 
@@ -88,7 +96,18 @@ section, summary, time, mark, audio, video
 }
 
 
-.post-photo-upload {
-    position: absolute;
-    margin-top: 31rem;
+.post-photo-upload-button {
+    margin-top: 0.3rem;
+}
+
+.preview-image{
+    width: 100%;
+    height: auto;
+}
+
+.preview-container {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 15px;
+    margin-top: 2rem;
 }

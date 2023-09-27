@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { createPost } from "../../store/post";
 import { useDispatch } from "react-redux";
+import photoUpload from '../../components/CreatePost/photo-uploadpng.png'
 
 const CreatePostForm = ({onClose}) => {
     const [body, setBody] = useState('')
     const [photoFile, setPhotoFile] = useState(null);
+    const [photoUrl, setPhotoUrl] = useState(null)
     const dispatch = useDispatch();
 
     const handleTextareaInput = (e) => {
@@ -15,6 +17,13 @@ const CreatePostForm = ({onClose}) => {
     const handleFile = ({ currentTarget }) => {
         const file = currentTarget.files[0];
         setPhotoFile(file);
+        if (file) {
+            const fileReader = new FileReader()
+            fileReader.readAsDataURL(file)
+            fileReader.onload = () => setPhotoUrl(fileReader.result)
+        } else {
+            setPhotoUrl(null)
+        }
     }
 
     const updateBody = (e) => {
@@ -38,6 +47,9 @@ const CreatePostForm = ({onClose}) => {
         onClose()
     };
 
+    let preview = null;
+    if (photoUrl) preview = <img className="preview-image" src={photoUrl}/>
+
     return (
         <form onSubmit={handleSubmit}>
             <textarea
@@ -47,8 +59,13 @@ const CreatePostForm = ({onClose}) => {
                 onInput={handleTextareaInput}
                 placeholder="What do you want to talk about?"
             />
-            <input className="post-photo-upload" type="file" onChange={handleFile}></input>
-            <button type="submit" className="submit-create-post-button">Post</button>
+            <div className="preview-container">
+                {preview}
+            </div>
+            <div className="post-form-button-container">
+                <input className="post-photo-upload-button" type="file" onChange={handleFile}></input>
+                <button type="submit" className="submit-create-post-button">Post</button>
+            </div>
         </form>
     );
 };

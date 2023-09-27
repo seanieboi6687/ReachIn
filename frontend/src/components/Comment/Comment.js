@@ -1,13 +1,10 @@
 import React from "react";
 import defaultprofile from '../../components/Profilebutton/profile-default.png'
-import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { fetchComments } from "../../store/comment";
+import { useSelector } from "react-redux";
 import { getComments } from "../../store/comment";
+import CommentIndex from "./CommentIndex";
 
-const Comment = ({comments, postid, open}) => {
-    const allComments = useSelector(getComments)
-    console.log(allComments)
+const Comment = ({postid, open}) => {
 
     if (!open) return null
 
@@ -25,7 +22,7 @@ const Comment = ({comments, postid, open}) => {
                 <button className="post-comment-button">Post</button>
             </div>
             <div className="comments-container">
-                comment place holder
+                <CommentIndex postid={postid}/>
             </div>
         </div>
     )

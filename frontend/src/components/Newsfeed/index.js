@@ -1,15 +1,16 @@
-import React from "react";
+import React from 'react';
 import '../../components/Newsfeed/Newsfeed.css'
-import PostIndex from "../PostIndex";
-import { useSelector } from "react-redux";
+import PostIndex from '../PostIndex';
+import { useSelector } from 'react-redux';
 import defaultProfile from '../../components/Profilebutton/profile-default.png'
-import CreatePostModal from "../CreatePost/CreatePostModal";
-import { useState } from "react";
-import CreatePostForm from "../CreatePost/CreatePostForm";
+import CreatePostModal from '../CreatePost/CreatePostModal';
+import { useState } from 'react';
+import CreatePostForm from '../CreatePost/CreatePostForm';
 import me from '../../components/Newsfeed/me.png'
 import git from '../../components/Footer/gitlogo.png'
 import link from '../../components/Footer/link.png'
-import { NavLink } from "react-router-dom/cjs/react-router-dom";
+import { NavLink } from 'react-router-dom/cjs/react-router-dom';
+import reachinlogo from '../../components/Newsfeed/reachinlogo.png'
 
 
 function Newsfeed() {
@@ -25,6 +26,13 @@ function Newsfeed() {
                         <div className="side-profile-container">
                             <img className="side-profile-post" src={defaultProfile} alt="default"></img>
                             <div className="user-name-text">{sessionUser.firstName} {sessionUser.lastName}</div>
+                            <div className="side-profile-divider-container">
+                                <hr className="side-profile-divider"/>
+                            <div className="profile-viewers-container">
+                                <p className="profile-viewers">Profile viewers:</p>
+                                <p className="profile-viewers-count">27</p>
+                            </div>
+                            </div>
                         </div>
                 </div>
 
@@ -81,10 +89,12 @@ function Newsfeed() {
                             </div>
                         </div>
                     </div>
+                    <div className="right-container-footer">
+                        <img className="right-footer-logo" src={reachinlogo}></img>
+                        <p className="right-footer-slogan">ReachIn Corporation © 2023</p>
+                    </div>
                 </div>
-
             </div>
-            
         </div>
     )
 }

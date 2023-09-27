@@ -11,11 +11,14 @@ const MODAL_STYLES = {
     left: '28.7%',
     transfor: 'translate(-50%, -50%)',
     backgroundColor: '#FFF',
-    padding: '40px',
+    paddingLeft: '30px',
+    paddingRight: '30px',
+    paddingBottom: '20px',
     zIndex: 1000,
     borderRadius: '10px',
     width: '41.4rem',
-    height: '31.5rem'
+    height: 'fit-content',
+    minHeight: '20rem'
 }
 
 const OVERLAY_STYLES = {
@@ -36,10 +39,14 @@ export default function Modal ({open, children, onClose}) {
     return ReactDOM.createPortal(
         <div style={OVERLAY_STYLES}>
             <div style={MODAL_STYLES}>
-                <img className="modal-profile-pic" src={modaldefaultProfile} alt="modal-profile"/>
-                <p className="modal-user-name">{sessionUser.firstName} {sessionUser.lastName}</p>
-                <img className="modal-close-button" onClick={onClose} src={close} alt="modal-close"></img>
-                {children}
+                <div className="modal-top-banner-container">
+                    <img className="modal-profile-pic" src={modaldefaultProfile} alt="modal-profile"/>
+                    <p className="modal-user-name">{sessionUser.firstName} {sessionUser.lastName}</p>
+                    <img className="modal-close-button" onClick={onClose} src={close} alt="modal-close"></img>
+                </div>
+                <div className="children-container">
+                    {children}
+                </div>
             </div>
         </div>,
         document.getElementById('portal')
