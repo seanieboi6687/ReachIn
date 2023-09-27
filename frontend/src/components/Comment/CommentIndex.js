@@ -17,7 +17,7 @@ const CommentIndex = ({postid}) => {
     const state = useSelector(getUsers)
     const [editOpen, setEditOpen] = useState(false)
 
-    const filteredComments = allComments.slice(0, allComments.length - 1).filter(comment => comment.postId === postid)
+    const filteredComments = allComments.slice(0, allComments.length).filter(comment => comment.postId === postid)
     const allUsers = state[3]
 
     // console.log(allComments)
