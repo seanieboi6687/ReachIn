@@ -1,6 +1,8 @@
 class Api::PostsController < ApplicationController
 
-    def create 
+    wrap_parameters include: Post.attribute_names + [:photo]
+
+    def create
         @post = Post.new(post_params)
         @post.author = current_user
         if @post.save
@@ -34,7 +36,7 @@ class Api::PostsController < ApplicationController
     private
 
     def post_params
-        params.require(:post).permit(:body)
+        params.require(:post).permit(:body, :photo)
     end
 
 end

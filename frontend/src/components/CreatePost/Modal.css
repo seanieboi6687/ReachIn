@@ -87,7 +87,8 @@ section, summary, time, mark, audio, video
     background-color: #004182;
 }
 
+
 .post-photo-upload {
-    position: fixed;
-    margin-top: 5rem;
+    position: absolute;
+    margin-top: 31rem;
 }
