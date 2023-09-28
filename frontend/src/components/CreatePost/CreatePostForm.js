@@ -75,7 +75,7 @@ const CreatePostForm = ({onClose}) => {
             </div>
             <div className="post-form-button-container">
                 <label for="post-photo-upload-button" className="image-upload-label">
-                    <img className="upload-image" src={uploadimg} style={imageStyle}></img>
+                    <img className="upload-image" src={uploadimg} style={imageStyle} alt=""></img>
                 </label>
                 <input id="post-photo-upload-button" type="file" onChange={handleFile} style={{ display: 'none' }}></input>
                 <button type="submit" className="submit-create-post-button">Post</button>
