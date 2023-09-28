@@ -52,6 +52,7 @@ section, summary, time, mark, audio, video
 }
 
 .left-reached {
+  margin-top: 0.3rem;
   font-size: 2.188rem;
   font-weight: 600;
   border: 1px solid transparent;

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchComments, getComments } from "../../store/comment";
+import { getComments } from "../../store/comment";
 import './CommentIndex.css'
 import commentdefaultprofile from '../../components/Profilebutton/profile-default.png'
 import { getUsers } from "../../store/user";
@@ -20,7 +20,6 @@ const CommentIndex = ({postid}) => {
     const filteredComments = allComments.slice(0, allComments.length).filter(comment => comment.postId === postid)
     const allUsers = state[3]
 
-    // console.log(allComments)
     return (
         filteredComments.map(comment => {
             const commenterid = comment.commenterId
@@ -33,11 +32,13 @@ const CommentIndex = ({postid}) => {
                         <div className="comment-content-container">
                             <img className="comment-delete-button"
                                 onClick={() => dispatch(deleteComment(comment.id))}
-                                src={commenttrash}>
+                                src={commenttrash}
+                                alt="">
                             </img>
                             <img className="comment-edit-button"
                                 src={commentedit}
-                                onClick={() => setEditOpen(true)}>
+                                onClick={() => setEditOpen(true)}
+                                alt="">
                             </img>
                             <EditCommentModal commentid={comment.id} open={editOpen} onClose={()=> setEditOpen(false)}>
                                 <CommentUpdateForm commentId={comment.id} onClose={() => setEditOpen(false)}/>
@@ -50,7 +51,7 @@ const CommentIndex = ({postid}) => {
             } else {
                 return (
                     <>
-                        <img className="comment-default-pfp" src={commentdefaultprofile} alt=""></img>
+                        <img className="comment-default-pfp" src={commentdefaultprofile} alt=''></img>
                         <div className="comment-content-container">
                             <p className="commenter-name2">{fname} {lname}</p>
                             <p className="comment-content1" key={comment.id}>{comment.content}</p>

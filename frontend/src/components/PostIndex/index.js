@@ -23,41 +23,40 @@ const PostIndex = () => {
     const [openEditPostId, setOpenEditPostId] = useState(null)
     const [commentOpen, setCommentOpen] = useState({});
 
-    useEffect(() => {
-        dispatch(fetchAllPosts())
-    },[dispatch])
-
     const state = useSelector(getUsers)
     const allUsers = state[3]
 
+    useEffect(() => {
+        dispatch(fetchAllPosts())
+    }, [dispatch])
+
     const handleOpening = (postId) => {
-        setCommentOpen((prevState) => ({...prevState, [postId]: !prevState[postId]}));
+        setCommentOpen((prevState) => ({ ...prevState, [postId]: !prevState[postId] }));
     };
 
     return (
         <div className='post-index'>
             {postsReverse.map(post => {
                 const isOpen = commentOpen[post.id];
-                console.log(post)
                 if (sessionUser?.id === post?.authorId){
                     return (
                         <div className='post-container' key={post.id}>
                             <div className='post-contents1'>
                                 <div className="edit-pencil-container">
-                                    <img onClick={() => setOpenEditPostId(post.id)} className="edit-pencil" src={pencil} />
+                                    <img onClick={() => setOpenEditPostId(post.id)} className="edit-pencil" src={pencil} alt=''/>
                                     <EditPostModal postId={post.id} open={openEditPostId === post.id} onClose={() => setOpenEditPostId(null)}>
                                         <UpdateForm postId={openEditPostId} onClose={() => setOpenEditPostId(null)} />
                                     </EditPostModal>
                                 </div>
                                 <div className="trash-container">
-                                    <img onClick={() => setOpenPostId(post.id)} className="trash" src={trash} />
+                                    <img onClick={() => setOpenPostId(post.id)} className="trash" src={trash} alt=''/>
                                     <PostDeleteModal postId={post.id} open={openPostId === post.id} onClose={() => setOpenPostId(null)}>
                                         <h1 className='delete-post-heading'>Delete post?</h1>
                                         <p className='delete-post-question'>Are you sure you want to permanently remove this post from ReachIn?</p>
                                     </PostDeleteModal>
                                 </div>
                                 <div className='pfp-container'>
-                                    <img className="default-post-pfp" src={defaultpfp}></img>
+                                    <img className="default-post-pfp" src={defaultpfp} alt=''></img>
                                 </div>
                                 <div className='post-user-name-container'>
                                     {sessionUser.firstName} {sessionUser.lastName}
@@ -76,11 +75,11 @@ const PostIndex = () => {
                                 </div>
                                 <div className='post-interaction-container'>
                                     <div className='like-button-container'>
-                                        <img className='like-png' src={likepng}/>
+                                        <img className='like-png' src={likepng} alt=''/>
                                         <p className='like-label'>Like</p>
                                     </div>
                                     <div className='comment-button-container' onClick={() => handleOpening(post.id)}>
-                                        <img className='comment-png' src={commentpng}/>
+                                        <img className='comment-png' src={commentpng} alt=''/>
                                         <p className='comment-label'>Comment</p>
                                     </div>
                                 </div>
@@ -98,7 +97,7 @@ const PostIndex = () => {
                     <div className='post-container2'>
                         <div className='post-contents2'>
                             <div className='pfp-container2'>
-                                <img className="default-post-pfp" src={defaultpfp}></img>
+                                <img className="default-post-pfp" src={defaultpfp} alt=''></img>
                             </div>
                             <div className='user-tag-container'>
                                 {fname} {lname}
@@ -117,11 +116,11 @@ const PostIndex = () => {
                             </div>
                             <div className='post-interaction-container'>
                                 <div className='like-button-container'>
-                                    <img className='like-png' src={likepng} />
+                                    <img className='like-png' src={likepng} alt=''/>
                                     <p className='like-label'>Like</p>
                                 </div>
                                 <div className='comment-button-container' onClick={() => handleOpening(post.id)}>
-                                    <img className='comment-png' src={commentpng} />
+                                    <img className='comment-png' src={commentpng} alt=''/>
                                     <p className='comment-label'>Comment</p>
                                 </div>
                             </div>

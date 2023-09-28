@@ -1,7 +1,7 @@
 import React from "react";
 import defaultprofile from '../../components/Profilebutton/profile-default.png'
 import CommentIndex from "./CommentIndex";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { createComment } from "../../store/comment";
 
