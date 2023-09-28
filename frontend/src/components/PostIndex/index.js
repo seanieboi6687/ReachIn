@@ -77,6 +77,7 @@ const PostIndex = () => {
                                     <div className='like-button-container'>
                                         <img className='like-png' src={likepng} alt=''/>
                                         <p className='like-label'>Like</p>
+                                        <p className='coming-soon'>Coming soon!</p>
                                     </div>
                                     <div className='comment-button-container' onClick={() => handleOpening(post.id)}>
                                         <img className='comment-png' src={commentpng} alt=''/>
@@ -118,6 +119,7 @@ const PostIndex = () => {
                                 <div className='like-button-container'>
                                     <img className='like-png' src={likepng} alt=''/>
                                     <p className='like-label'>Like</p>
+                                    <p className='coming-soon'>Coming soon!</p>
                                 </div>
                                 <div className='comment-button-container' onClick={() => handleOpening(post.id)}>
                                     <img className='comment-png' src={commentpng} alt=''/>

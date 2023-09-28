@@ -96,16 +96,6 @@ section, summary, time, mark, audio, video
     background-color: #004182;
 }
 
-/* .upload-image {
-    border: 1px solid red;
-    width: 3rem;
-    border-radius: 40px;
-    padding: 10px;
-    background-color: rgb(244, 242, 238);
-    transition: 0.2s ease-in-out;
-    cursor: pointer;
-} */
-
 .image-upload-label {
     padding: 8px;
     width: fit-content;
@@ -115,11 +105,6 @@ section, summary, time, mark, audio, video
 
 .upload-image:hover {
     box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.4);
-    /* Add a shadow to the bottom half */
-}
-
-#post-photo-upload-button {
-
 }
 
 .preview-image{

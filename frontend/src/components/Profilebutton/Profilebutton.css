@@ -92,6 +92,20 @@ section, summary, time, mark, audio, video
     transition: 0.1s ease-in;
 }
 
+.profile-coming-soon {
+    position: absolute;
+    display: none;
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 10px;
+    margin-left: 11.5rem;
+    margin-top: 0.1rem;
+}
+
+.view-profile-button:hover .profile-coming-soon {
+    display: flex;
+    /* Show the text on hover */
+}
+
 .sign-out-button {
     font-size: 1rem;
     background-color: white;
