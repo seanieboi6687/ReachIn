@@ -2,25 +2,6 @@
 
 [ReachIn Live](https://reachin-webservice.onrender.com)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Introduction
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ReachIn is a fullstack clone of widely used professional social media, LinkedIn. It's a platform for professionals to connect and share their interests and passion for all things related to careers and opportunities.
