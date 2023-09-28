@@ -13,7 +13,7 @@ const MODAL_STYLES = {
     backgroundColor: '#FFF',
     paddingLeft: '30px',
     paddingRight: '30px',
-    paddingBottom: '20px',
+    paddingBottom: '0px',
     zIndex: 1000,
     borderRadius: '10px',
     width: '41.4rem',

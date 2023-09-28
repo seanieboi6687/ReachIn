@@ -81,6 +81,7 @@ section, summary, time, mark, audio, video
     width: 6rem;
     border-radius: 1.875rem;
     margin-left: 14.5rem;
+    margin-top: 2.5rem;
     border: none;
     cursor: pointer;
     background-color: #0a66c2;
@@ -95,9 +96,30 @@ section, summary, time, mark, audio, video
     background-color: #004182;
 }
 
+/* .upload-image {
+    border: 1px solid red;
+    width: 3rem;
+    border-radius: 40px;
+    padding: 10px;
+    background-color: rgb(244, 242, 238);
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+} */
 
-.post-photo-upload-button {
-    margin-top: 0.3rem;
+.image-upload-label {
+    padding: 8px;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 0rem;
+}
+
+.upload-image:hover {
+    box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.4);
+    /* Add a shadow to the bottom half */
+}
+
+#post-photo-upload-button {
+
 }
 
 .preview-image{

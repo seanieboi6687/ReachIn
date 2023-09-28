@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { createPost } from "../../store/post";
 import { useDispatch } from "react-redux";
+import uploadimg from './imgicon.png'
 
 const CreatePostForm = ({onClose}) => {
     const [body, setBody] = useState('')
@@ -46,6 +47,17 @@ const CreatePostForm = ({onClose}) => {
         onClose()
     };
 
+    const imageStyle = {
+        width: '3rem',  // Adjust the width and height as needed
+        borderRadius: '40px',
+        padding: '5px',
+        backgroundColor: 'rgb(244, 242, 238)',
+        cursor: "pointer",
+        marginTop: "1rem",
+        transition: "0.2s ease-in-out"
+        // You can add more styles as needed
+    };
+
     let preview = null;
     if (photoUrl) preview = <img className="preview-image" src={photoUrl} alt=""/>
 
@@ -62,7 +74,10 @@ const CreatePostForm = ({onClose}) => {
                 {preview}
             </div>
             <div className="post-form-button-container">
-                <input className="post-photo-upload-button" type="file" onChange={handleFile}></input>
+                <label for="post-photo-upload-button" className="image-upload-label">
+                    <img className="upload-image" src={uploadimg} style={imageStyle}></img>
+                </label>
+                <input id="post-photo-upload-button" type="file" onChange={handleFile} style={{ display: 'none' }}></input>
                 <button type="submit" className="submit-create-post-button">Post</button>
             </div>
         </form>
