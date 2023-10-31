@@ -2,12 +2,18 @@ import csrfFetch from "./csrf";
 import { RECEIVE_POSTS } from "./post";
 
 export const RECEIVE_LIKE = 'likes/RECEIVE_LIKE';
+export const RECEIVE_LIKES = 'likes/RECEIVE_LIKES'
 export const REMOVE_LIKE = 'likes/REMOVE_LIKE';
 
 const receiveLike = like => ({
     type: RECEIVE_LIKE,
     like
 });
+
+const receiveLikes = data => ({
+    type: RECEIVE_LIKES,
+    data
+})
 
 const removeLike = likeId => ({
     type: REMOVE_LIKE,
@@ -19,6 +25,16 @@ export const getLikes = state => {
         return Object.values(state.likes)
     } else {
         return []
+    }
+}
+
+export const fetchAllLikes = () => async dispatch => {
+    const response = await csrfFetch('/api/likes')
+
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(receiveLikes(data));
+        return response
     }
 }
 
@@ -55,6 +71,8 @@ const likesReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_POSTS:
             return {...nextState, ...action.data.likes}
+        case RECEIVE_LIKES:
+            return { ...nextState, ...action.data.likes }
         case RECEIVE_LIKE:
             return {...nextState, [action.like.id]: action.like}
         case REMOVE_LIKE:

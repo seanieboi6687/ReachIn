@@ -14,12 +14,14 @@ ApplicationRecord.transaction do
   User.destroy_all
   Post.destroy_all
   Comment.destroy_all
+  Like.destroy_all
 
   puts "Resetting primary keys for all tables..."
 
   ApplicationRecord.connection.reset_pk_sequence!('users')
   ApplicationRecord.connection.reset_pk_sequence!('posts')
   ApplicationRecord.connection.reset_pk_sequence!('comments')
+  ApplicationRecord.connection.reset_pk_sequence!('likes')
 #   ApplicationRecord.connection.reset_pk_sequence!('posts')
 
   puts "Creating users..."
@@ -199,5 +201,55 @@ end
     post_id: post6.id
   )
 
+  puts "Creating likes..."
+  like1 = Like.create!(
+    liker_id: demo.id,
+    post_id: post1.id
+  )
+
+  like2 = Like.create!(
+    liker_id: demo.id,
+    post_id: post2.id
+  )
+
+  like3 = Like.create!(
+    liker_id: demo.id,
+    post_id: post3.id
+  )
+
+  like4 = Like.create!(
+    liker_id: demo.id,
+    post_id: post4.id
+  )
+
+  like5 = Like.create!(
+    liker_id: demo.id,
+    post_id: post5.id
+  )
+
+  like6 = Like.create!(
+    liker_id: demo.id,
+    post_id: post6.id
+  )
+
+  like7 = Like.create!(
+    liker_id: bob.id,
+    post_id: post4.id
+  )
+
+  like8 = Like.create!(
+    liker_id: kyle.id,
+    post_id: post4.id
+  )
+
+  like9 = Like.create!(
+    liker_id: dennis.id,
+    post_id: post4.id
+  )
+
+  like10 = Like.create!(
+    liker_id: klodian.id,
+    post_id: post4.id
+  )
 
   puts "Done!"

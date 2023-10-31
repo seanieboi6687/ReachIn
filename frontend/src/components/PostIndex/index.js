@@ -13,6 +13,7 @@ import commentpng from './commentpng.png'
 import Comment from '../Comment/Comment'
 import defaultpfp from '../../components/Profilebutton/profile-default.png'
 import { getUsers } from '../../store/user'
+import { createLike, getLikes, fetchAllLikes } from '../../store/like'
 
 const PostIndex = () => {
     const dispatch = useDispatch()
@@ -27,7 +28,8 @@ const PostIndex = () => {
     const allUsers = state[3]
 
     useEffect(() => {
-        dispatch(fetchAllPosts())
+        dispatch(fetchAllPosts());
+        dispatch(fetchAllLikes());
     }, [dispatch])
 
     const handleOpening = (postId) => {
@@ -37,6 +39,7 @@ const PostIndex = () => {
     return (
         <div className='post-index'>
             {postsReverse.map(post => {
+                console.log(post)
                 const isOpen = commentOpen[post.id];
                 if (sessionUser?.id === post?.authorId){
                     return (
@@ -77,7 +80,6 @@ const PostIndex = () => {
                                     <div className='like-button-container'>
                                         <img className='like-png' src={likepng} alt=''/>
                                         <p className='like-label'>Like</p>
-                                        <p className='coming-soon'>Coming soon!</p>
                                     </div>
                                     <div className='comment-button-container' onClick={() => handleOpening(post.id)}>
                                         <img className='comment-png' src={commentpng} alt=''/>
@@ -119,7 +121,6 @@ const PostIndex = () => {
                                 <div className='like-button-container'>
                                     <img className='like-png' src={likepng} alt=''/>
                                     <p className='like-label'>Like</p>
-                                    <p className='coming-soon'>Coming soon!</p>
                                 </div>
                                 <div className='comment-button-container' onClick={() => handleOpening(post.id)}>
                                     <img className='comment-png' src={commentpng} alt=''/>

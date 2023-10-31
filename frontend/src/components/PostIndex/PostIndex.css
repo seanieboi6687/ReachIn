@@ -155,7 +155,7 @@ section, summary, time, mark, audio, video
     overflow: hidden;
 }
 
-.coming-soon {
+/* .coming-soon {
     top: 0;
     left: 0;
     display: none;
@@ -165,12 +165,12 @@ section, summary, time, mark, audio, video
     width: fit-content;
     margin-top: -0.9rem;
     margin-left: 10.5rem;
-}
+} */
 
-.like-button-container:hover .coming-soon{
-    display: flex;
+/* .like-button-container:hover .coming-soon{
+    display: flex; */
     /* Show the text on hover */
-}
+/* } */
 
 .comment-button-container {
     grid-area: 1/2/1/3;
