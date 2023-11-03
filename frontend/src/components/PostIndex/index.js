@@ -19,6 +19,7 @@ const PostIndex = () => {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user);
     const posts = useSelector(getPosts)
+    const likes = useSelector(getLikes)
     const postsReverse = [...posts].reverse()
     const [openPostId, setOpenPostId] = useState(null);
     const [openEditPostId, setOpenEditPostId] = useState(null)
@@ -36,11 +37,19 @@ const PostIndex = () => {
         setCommentOpen((prevState) => ({ ...prevState, [postId]: !prevState[postId] }));
     };
 
+    const handleLike = (postId) => {
+        dispatch(createLike({
+            likerId: sessionUser.id,
+            postId: postId
+        }))
+    }
+
     return (
         <div className='post-index'>
             {postsReverse.map(post => {
-                console.log(post)
                 const isOpen = commentOpen[post.id];
+                const thisPostLikesArr = Object.values(likes)
+                const postLikes = thisPostLikesArr.filter(like => like.postId === post.id)
                 if (sessionUser?.id === post?.authorId){
                     return (
                         <div className='post-container' key={post.id}>
@@ -77,9 +86,9 @@ const PostIndex = () => {
                                     <hr className='post-index-divider'/>
                                 </div>
                                 <div className='post-interaction-container'>
-                                    <div className='like-button-container'>
+                                    <div className='like-button-container' onClick={() => handleLike(post.id)} >
                                         <img className='like-png' src={likepng} alt=''/>
-                                        <p className='like-label'>Like</p>
+                                        <p className='like-label'>Like{postLikes.length}</p>
                                     </div>
                                     <div className='comment-button-container' onClick={() => handleOpening(post.id)}>
                                         <img className='comment-png' src={commentpng} alt=''/>
@@ -118,9 +127,9 @@ const PostIndex = () => {
                                 <hr className='post-index-divider'/>
                             </div>
                             <div className='post-interaction-container'>
-                                <div className='like-button-container'>
+                                <div className='like-button-container' onClick={() => handleLike(post.id)}>
                                     <img className='like-png' src={likepng} alt=''/>
-                                    <p className='like-label'>Like</p>
+                                    <p className='like-label'>Like{postLikes.length}</p>
                                 </div>
                                 <div className='comment-button-container' onClick={() => handleOpening(post.id)}>
                                     <img className='comment-png' src={commentpng} alt=''/>
