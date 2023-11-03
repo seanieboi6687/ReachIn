@@ -203,32 +203,32 @@ end
 
   puts "Creating likes..."
   like1 = Like.create!(
-    liker_id: demo.id,
+    liker_id: sean.id,
     post_id: post1.id
   )
 
   like2 = Like.create!(
-    liker_id: demo.id,
+    liker_id: sean.id,
     post_id: post2.id
   )
 
   like3 = Like.create!(
-    liker_id: demo.id,
+    liker_id: sean.id,
     post_id: post3.id
   )
 
   like4 = Like.create!(
-    liker_id: demo.id,
+    liker_id: sean.id,
     post_id: post4.id
   )
 
   like5 = Like.create!(
-    liker_id: demo.id,
+    liker_id: sean.id,
     post_id: post5.id
   )
 
   like6 = Like.create!(
-    liker_id: demo.id,
+    liker_id: sean.id,
     post_id: post6.id
   )
 

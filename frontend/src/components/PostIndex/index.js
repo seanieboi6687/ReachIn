@@ -13,7 +13,7 @@ import commentpng from './commentpng.png'
 import Comment from '../Comment/Comment'
 import defaultpfp from '../../components/Profilebutton/profile-default.png'
 import { getUsers } from '../../store/user'
-import { createLike, getLikes, fetchAllLikes } from '../../store/like'
+import { createLike, getLikes, fetchAllLikes, deleteLike } from '../../store/like'
 
 const PostIndex = () => {
     const dispatch = useDispatch()
@@ -38,10 +38,18 @@ const PostIndex = () => {
     };
 
     const handleLike = (postId) => {
-        dispatch(createLike({
-            likerId: sessionUser.id,
-            postId: postId
-        }))
+        const postLikes = [...likes].filter(like => like.postId === postId)
+        const notLiked = postLikes.every(like => like.likerId !== sessionUser.id)
+        console.log(notLiked)
+        if (notLiked) {
+            dispatch(createLike({
+                likerId: sessionUser.id,
+                postId: postId
+            }))
+        } else {
+            const usersLike = postLikes.filter(like => like.likerId === sessionUser.id)
+            dispatch(deleteLike(usersLike[0].id))
+        }
     }
 
     return (
