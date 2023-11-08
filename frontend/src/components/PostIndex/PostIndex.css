@@ -366,3 +366,15 @@ section, summary, time, mark, audio, video
     width: 33.8rem;
     height: fit-content;
 }
+
+.like-count-container{
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+    margin-bottom: -15px
+}
+
+.like-png1{
+    width: 1rem;
+}

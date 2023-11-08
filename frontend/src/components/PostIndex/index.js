@@ -9,6 +9,7 @@ import EditPostModal from './PostEditModal'
 import { useState } from 'react'
 import UpdateForm from '../UpdatePost/UpdateForm'
 import likepng from './likepng.png'
+import likedpng from './likedpng.png'
 import commentpng from './commentpng.png'
 import Comment from '../Comment/Comment'
 import defaultpfp from '../../components/Profilebutton/profile-default.png'
@@ -58,6 +59,7 @@ const PostIndex = () => {
                 const isOpen = commentOpen[post.id];
                 const thisPostLikesArr = Object.values(likes)
                 const postLikes = thisPostLikesArr.filter(like => like.postId === post.id)
+                const notLiked = postLikes.every(like => like.likerId !== sessionUser.id)
                 if (sessionUser?.id === post?.authorId){
                     return (
                         <div className='post-container' key={post.id}>
@@ -131,13 +133,16 @@ const PostIndex = () => {
                             <div className='post-image-container'>
                                 <img className="post-attached-image" src={post.photoUrl} alt=''/>
                             </div>
+                            <div className='like-count-container'>
+                                {postLikes.length}<img className='like-png1' src={likepng} alt='' />
+                            </div>
                             <div>
                                 <hr className='post-index-divider'/>
                             </div>
                             <div className='post-interaction-container'>
                                 <div className='like-button-container' onClick={() => handleLike(post.id)}>
-                                    <img className='like-png' src={likepng} alt=''/>
-                                    <p className='like-label'>Like{postLikes.length}</p>
+                                    <img className='like-png' src={notLiked? likepng : likedpng} alt=''/>
+                                    <p className='like-label'>Like</p>
                                 </div>
                                 <div className='comment-button-container' onClick={() => handleOpening(post.id)}>
                                     <img className='comment-png' src={commentpng} alt=''/>
