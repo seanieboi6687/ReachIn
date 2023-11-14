@@ -10,18 +10,16 @@ function UserProfile() {
     const { id } = useParams();
     const user = allUsers[id]
 
-    console.log(user)
-
-    if (sessionUser?.id === user?.id){
+    if (id == sessionUser?.id){
         return (
             <div className="sessionusername">
-                sessionUser
+                {sessionUser.firstName} {sessionUser.lastName}
             </div>
         )
     } else {
         return (
             <div className="username">
-                otherUser
+                {allUsers[id].firstName} {allUsers[id].lastName}
             </div>
         )
     }

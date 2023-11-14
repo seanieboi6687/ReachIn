@@ -21,6 +21,7 @@ section, summary, time, mark, audio, video
 .sessionusername {
     position: fixed;
     z-index: 1;
+    font-size: 100px;
     border: 10px solid red;
 }
 
