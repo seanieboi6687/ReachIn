@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { useDispatch } from 'react-redux';
 import { logout } from "../../store/session";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
@@ -6,6 +7,7 @@ import '../../components/Profilebutton/Profilebutton.css'
 import defaultProfile from '../../components/Profilebutton/profile-default.png'
 
 function ProfileButton({ user }) {
+  const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   const history = useHistory()
@@ -45,7 +47,7 @@ function ProfileButton({ user }) {
               I am full-stack software engineer!
               Javascript | React | Rails | Ruby | HTML | CSS | NodeJS | PostgreSQL.
               </p>
-            <button className="view-profile-button">
+            <button className="view-profile-button" onClick={() => {history.push(`/users/${sessionUser.id}`)}}>
               <span className='profile-coming-soon'>Coming soon!</span>
               View Profile
             </button>
