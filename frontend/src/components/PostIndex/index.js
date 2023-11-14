@@ -1,7 +1,9 @@
 import './PostIndex.css'
+import { NavLink } from 'react-router-dom';
 import { fetchAllPosts, getPosts } from '../../store/post'
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
+import UserProfile from '../UserProfile/UserProfile';
 import pencil from '../../components/PostIndex/editpencil.png'
 import trash from '../../components/PostIndex/posttrash.png'
 import PostDeleteModal from './PostDeleteModal'
@@ -81,7 +83,7 @@ const PostIndex = () => {
                                     <img className="default-post-pfp" src={defaultpfp} alt=''></img>
                                 </div>
                                 <div className='post-user-name-container'>
-                                    {sessionUser.firstName} {sessionUser.lastName}
+                                    <NavLink className="navlink" to={`/users/${sessionUser.id}`}>{sessionUser.firstName} {sessionUser.lastName}</NavLink>
                                 </div>
                                 <div className='timestamp-container1'>
                                     {(new Date(post.createdAt)).toLocaleDateString('en-US')}
@@ -122,7 +124,7 @@ const PostIndex = () => {
                                 <img className="default-post-pfp" src={defaultpfp} alt=''></img>
                             </div>
                             <div className='user-tag-container'>
-                                {fname} {lname}
+                                <NavLink className="navlink" to={`/users/${authorid}`}>{fname} {lname}</NavLink>
                             </div>
                             <div className='timestamp-container2'>
                                 {(new Date(post.createdAt)).toLocaleDateString('en-US')}
