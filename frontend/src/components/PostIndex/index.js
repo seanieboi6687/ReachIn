@@ -60,15 +60,15 @@ const PostIndex = () => {
             {postsReverse.map(post => {
                 const isOpen = commentOpen[post.id];
                 const thisPostLikesArr = Object.values(likes)
-                const postLikes = thisPostLikesArr.filter(like => like.postId === post.id)
-                const notLiked = postLikes.every(like => like.likerId !== sessionUser.id)
+                const postLikes = thisPostLikesArr.filter(like => like?.postId === post?.id)
+                const notLiked = postLikes.every(like => like?.likerId !== sessionUser?.id)
                 if (sessionUser?.id === post?.authorId){
                     return (
                         <div className='post-container' key={post.id}>
                             <div className='post-contents1'>
                                 <div className="edit-pencil-container">
                                     <img onClick={() => setOpenEditPostId(post.id)} className="edit-pencil" src={pencil} alt=''/>
-                                    <EditPostModal postId={post.id} open={openEditPostId === post.id} onClose={() => setOpenEditPostId(null)}>
+                                    <EditPostModal postId={post.id} open={openEditPostId === post?.id} onClose={() => setOpenEditPostId(null)}>
                                         <UpdateForm postId={openEditPostId} onClose={() => setOpenEditPostId(null)} />
                                     </EditPostModal>
                                 </div>
