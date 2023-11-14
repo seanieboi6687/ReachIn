@@ -36,6 +36,10 @@ function App() {
           <Newsfeed/>
         </Route>
 
+        <Route exact path="/users/:id">
+          <Navigation />
+        </Route>
+
       </Switch>
     </>
   );

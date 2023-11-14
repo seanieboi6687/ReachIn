@@ -134,7 +134,7 @@ const PostIndex = () => {
                                 <img className="post-attached-image" src={post.photoUrl} alt=''/>
                             </div>
                             <div className='like-count-container'>
-                                {postLikes.length}<img className='like-png1' src={likepng} alt='' />
+                                {postLikes.length}<img className='like-png1' src={likedpng} alt='' />
                             </div>
                             <div>
                                 <hr className='post-index-divider'/>
