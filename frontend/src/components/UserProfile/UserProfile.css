@@ -18,11 +18,35 @@ section, summary, time, mark, audio, video
     vertical-align: baseline;
 }
 
-.sessionusername {
-    position: fixed;
-    z-index: 1;
-    font-size: 100px;
-    border: 10px solid red;
+.session-user-profile-container {
+    display: grid;
+    grid-template-rows: repeat(4);
+    grid-gap: 15px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    margin-top: 9vh;
+}
+.session-user-profile-head{
+    border: 1px solid blue;
+    grid-template-rows: repeat(2);
+    border-radius: 10px;
+}
+.session-user-images-container
+.session-user-cover{
+    width: 40vw;
+}
+.session-user-profile-about {
+    border-radius: 10px;
+    border: 1px solid blue;
+}
+.session-user-profile-activity {
+    border-radius: 10px;
+    border: 1px solid blue;
+}
+.session-user-profile-education {
+    border-radius: 10px;
+    border: 1px solid blue;
 }
 
 .username {

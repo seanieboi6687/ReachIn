@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { fetchAllPosts, getPosts } from '../../store/post'
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
-import UserProfile from '../UserProfile/UserProfile';
 import pencil from '../../components/PostIndex/editpencil.png'
 import trash from '../../components/PostIndex/posttrash.png'
 import PostDeleteModal from './PostDeleteModal'
