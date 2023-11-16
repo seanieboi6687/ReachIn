@@ -19,18 +19,24 @@ function UserProfile() {
                 <div className='session-user-profile-head'>
                     <div className='session-user-images-container'>
                         <img className='session-user-cover' src={cover}></img>
-                        <img className='session-user-pfp' src={defaultpfp}></img>
+                        <div className='session-user-pfp-container'>
+                            <img className='session-user-pfp' src={defaultpfp}></img>
+                        </div>
                     </div>
-                    <p>session user profile head</p>
+                    <div className='session-user-name'>
+                        {sessionUser.firstName} {sessionUser.lastName}
+                    </div>
+                    <div className='location'>
+                        New York City Metropolitan Area
+                    </div>
+                    
                 </div>
                 <div className='session-user-profile-about'>
-                    session user about
-                </div>
-                <div className='session-user-profile-activity'>
-                    session user activity
+                    <p className='about-header'>About</p>
+                    <p className='session-user-bio'>{user.bio}</p>
                 </div>
                 <div className='session-user-profile-education'>
-                    session user education
+                    <p className='education-header'>Education</p>
                 </div>
 
             </div>

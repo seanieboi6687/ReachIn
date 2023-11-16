@@ -32,10 +32,10 @@ section, summary, time, mark, audio, video
     margin-top: 4.5rem;
     border: transparent;
     border-radius: 0.5rem 0 0.5rem 0.5rem;
-    padding: 5px;
+    padding: 10px;
     position: fixed;
     margin-left: 56vw;
-    width: 17rem;
+    width: 16rem;
     height: 20rem;
     border: 1px solid rgb(232, 232, 232);
     background-color: white;
@@ -57,11 +57,12 @@ section, summary, time, mark, audio, video
 }
 
 .default-profile {
-    width: 2.3rem;
+    margin-top: 0.2rem;
+    width: 2rem;
 }
 
 .default-profile-drop {
-    width: 4rem;
+    width: 3.5rem;
 }
 
 .user-name {

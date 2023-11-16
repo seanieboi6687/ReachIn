@@ -58,9 +58,9 @@ section, summary, time, mark, audio, video
 }
 
 .modal-profile-pic {
-    width: 5rem;
+    width: 4rem;
     margin-left: 1rem;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
 }
 
 .modal-user-name {
