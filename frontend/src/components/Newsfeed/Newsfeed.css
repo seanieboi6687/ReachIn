@@ -130,7 +130,8 @@ section, summary, time, mark, audio, video
 }
 
 .start-post-create-button {
-    width: 27.5vw;
+    margin-top: 0.4rem;
+    width: 27.8vw;
     padding: 1rem 1.2rem;
     border-radius: 1.875rem;
     border: none;

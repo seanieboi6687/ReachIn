@@ -53,7 +53,8 @@ end
     last_name: "Jeun",
     phone_number: "9171234567",
     gender: "Male",
-    bio: "Let's get this shmoney",
+    bio: "A software engineer from an intense full-stack program at App Academy, with an educational background in Consumer Psychology from Stony Brook University and previous experience in Tech Recruiting for TikTok, Amazon, Nike, Bloomberg, Google, and more! Feel free to contact me at sean.jeun@gmail.com with any fitting opportunities!
+          Skills: JavaScript, Ruby on Rails, React / Redux, Node.js, HTML, CSS, SQL, PostgreSQL, MongoDB, AWS S3, Express, and more to come!",
     email: 'seanj@gmail.com', 
     password: 'seanpassword'
   )
