@@ -69,8 +69,46 @@ function UserProfile() {
         )
     } else {
         return (
-            <div className="username">
-                other user name
+            <div className="session-user-profile-container">
+                <div className='session-user-profile-head'>
+                    <div className='session-user-images-container'>
+                        <img className='session-user-cover' src={cover}></img>
+                        <div className='session-user-pfp-container'>
+                            <img className='session-user-pfp' src={defaultpfp}></img>
+                        </div>
+                    </div>
+                    <div className='session-user-name'>
+                        {user?.firstName} {user?.lastName}
+                    </div>
+                    <div className='location'>
+                        New York City Metropolitan Area
+                    </div>
+
+                </div>
+                <div className='session-user-profile-about'>
+                    <p className='about-header'>About</p>
+                    <p className='session-user-bio'>{user?.bio}</p>
+                </div>
+                <div className='session-user-profile-education'>
+                    <p className='education-header'>Education</p>
+                    <div className='session-user-education'>
+                        <img className='uni-logo' src={stonylogopng}></img>
+                        <div className='uni-details'>
+                            <div className='uni-name'>Stony Brook University</div>
+                            <div className='degree-name'>Bachelor's degree, Consumer Psychology</div>
+                            <div className='uni-time'>Aug 2016 - May 2020</div>
+                        </div>
+                    </div>
+                    <div className='session-user-education'>
+                        <img className='uni-logo' src={aalogopng}></img>
+                        <div className='uni-details'>
+                            <div className='uni-name'>App Academy</div>
+                            <div className='degree-name'>Full-stack Software Engineering</div>
+                            <div className='uni-time'>Jun 2023 - Oct 2023</div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         )
     }
