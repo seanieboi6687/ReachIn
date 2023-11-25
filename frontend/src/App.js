@@ -9,15 +9,25 @@ import './components/Navigation/Navigation.css'
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Footer from "./components/Footer"
+import { createContext } from "react";
+import { useState } from "react";
+
+export const ThemeContext = createContext(null)
 
 function App() {
   const sessionUser = useSelector(state => state.session.user);
   const history = useHistory();
+  const [theme, setTheme] = useState("light")
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === "light" ? "dark" : "light"))
+  }
+
   if (!sessionUser) {
     history.push('/login')
   }
   return (
     <>
+    <ThemeContext.Provider value={{theme, toggleTheme}}>
       <Switch>
 
         <Route exact path="/login" >
@@ -43,6 +53,7 @@ function App() {
         </Route>
 
       </Switch>
+      </ThemeContext.Provider>
     </>
   );
 }
