@@ -75,7 +75,6 @@ function Navigation() {
         </div>
         <ProfileButton user={sessionUser} />
       </>
-
     )}
 
     return (

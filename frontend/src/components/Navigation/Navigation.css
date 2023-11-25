@@ -151,6 +151,7 @@ section, summary, time, mark, audio, video
 .home-container {
   width: fit-content;
   overflow: hidden;
+  margin-left: 1vw;
 }
 
 .home-container::before {
