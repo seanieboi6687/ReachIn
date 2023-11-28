@@ -48,7 +48,6 @@ function ProfileButton({ user }) {
               Javascript | React | Rails | Ruby | HTML | CSS | NodeJS | PostgreSQL.
               </p>
             <button className="view-profile-button" onClick={() => {history.push(`/users/${sessionUser.id}`)}}>
-              <span className='profile-coming-soon'>Coming soon!</span>
               View Profile
             </button>
             <li>

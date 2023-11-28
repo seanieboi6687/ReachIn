@@ -50,8 +50,8 @@ function UserProfile() {
                     <div className='session-user-education'>
                         <img className='uni-logo' src={stonylogopng}></img>
                         <div className='uni-details'>
-                            <div className='uni-name'>Stony Brook University</div>
-                            <div className='degree-name'>Bachelor's degree, Consumer Psychology</div>
+                            <div className='uni-name'>SUNY</div>
+                            <div className='degree-name'>Bachelor of Science Degree</div>
                             <div className='uni-time'>Aug 2016 - May 2020</div>
                         </div>
                     </div>
