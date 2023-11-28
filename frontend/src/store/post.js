@@ -64,7 +64,6 @@ export const updatePost = post => async dispatch => {
     })
     if (response.ok){
         const data = await response.json()
-        // debugger
         dispatch(receivePost(data.post))
         return response
     }
