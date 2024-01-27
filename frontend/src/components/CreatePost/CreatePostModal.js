@@ -18,7 +18,7 @@ const MODAL_STYLES = {
     borderRadius: '10px',
     width: '41.4rem',
     height: 'fit-content',
-    minHeight: '20rem'
+    minHeight: '20rem',
 }
 
 const OVERLAY_STYLES = {

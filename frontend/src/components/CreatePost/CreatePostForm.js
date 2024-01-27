@@ -48,14 +48,13 @@ const CreatePostForm = ({onClose}) => {
     };
 
     const imageStyle = {
-        width: '3rem',  // Adjust the width and height as needed
+        width: '3rem',
         borderRadius: '40px',
         padding: '5px',
         backgroundColor: 'rgb(244, 242, 238)',
         cursor: "pointer",
         marginTop: "1rem",
         transition: "0.2s ease-in-out"
-        // You can add more styles as needed
     };
 
     let preview = null;

@@ -114,7 +114,7 @@ section, summary, time, mark, audio, video
 
 .preview-container {
     width: fit-content;
-    height: fit-content;
+    height: 20rem;
     border-radius: 15px;
     margin-top: 2rem;
 }
