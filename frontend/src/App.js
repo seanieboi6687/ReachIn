@@ -17,10 +17,6 @@ export const ThemeContext = createContext(null)
 function App() {
   const sessionUser = useSelector(state => state.session.user);
   const history = useHistory();
-  const [theme, setTheme] = useState("light")
-  const toggleTheme = () => {
-    setTheme((curr) => (curr === "light" ? "dark" : "light"))
-  }
 
   if (!sessionUser) {
     history.push('/login')
