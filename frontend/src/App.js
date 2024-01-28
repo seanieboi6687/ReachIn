@@ -27,7 +27,6 @@ function App() {
   }
   return (
     <>
-    <ThemeContext.Provider value={{theme, toggleTheme}}>
       <Switch>
 
         <Route exact path="/login" >
@@ -53,7 +52,6 @@ function App() {
         </Route>
 
       </Switch>
-      </ThemeContext.Provider>
     </>
   );
 }
