@@ -10,7 +10,6 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Footer from "./components/Footer"
 import { createContext } from "react";
-import { useState } from "react";
 
 export const ThemeContext = createContext(null)
 
