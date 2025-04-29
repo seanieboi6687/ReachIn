@@ -1,6 +1,5 @@
 # Welcome to ReachIn!
 
-[ReachIn Live](https://reachin-webservice.onrender.com)
 
 # Introduction
 
